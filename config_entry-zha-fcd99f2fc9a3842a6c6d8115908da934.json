@@ -1,0 +1,549 @@
+{
+  "home_assistant": {
+    "installation_type": "Home Assistant OS",
+    "version": "2023.11.2",
+    "dev": false,
+    "hassio": true,
+    "virtualenv": false,
+    "python_version": "3.11.6",
+    "docker": true,
+    "arch": "aarch64",
+    "timezone": "Europe/Berlin",
+    "os_name": "Linux",
+    "os_version": "6.1.21-v8",
+    "supervisor": "2023.11.3",
+    "host_os": "Home Assistant OS 11.1",
+    "docker_version": "24.0.6",
+    "chassis": "embedded",
+    "run_as_root": true
+  },
+  "custom_components": {
+    "hacs": {
+      "version": "1.33.0",
+      "requirements": [
+        "aiogithubapi>=22.10.1"
+      ]
+    },
+    "dreame_vacuum": {
+      "version": "v2.0.0b6",
+      "requirements": [
+        "pillow",
+        "numpy",
+        "pybase64",
+        "requests",
+        "pycryptodome",
+        "python-miio",
+        "py-mini-racer",
+        "tzlocal"
+      ]
+    },
+    "wiser": {
+      "version": "3.4.0",
+      "requirements": [
+        "aioWiserHeatAPI==1.4.0"
+      ]
+    },
+    "o365": {
+      "version": "v4.4.4",
+      "requirements": [
+        "O365==2.0.28",
+        "BeautifulSoup4>=4.10.0"
+      ]
+    },
+    "waste_collection_schedule": {
+      "version": "1.43.0",
+      "requirements": [
+        "icalendar",
+        "recurring_ical_events",
+        "icalevents",
+        "bs4",
+        "lxml"
+      ]
+    },
+    "ring_martinpham": {
+      "version": "0.0.1",
+      "requirements": []
+    }
+  },
+  "integration_manifest": {
+    "domain": "zha",
+    "name": "Zigbee Home Automation",
+    "after_dependencies": [
+      "onboarding",
+      "usb"
+    ],
+    "codeowners": [
+      "@dmulcahey",
+      "@adminiuga",
+      "@puddly"
+    ],
+    "config_flow": true,
+    "dependencies": [
+      "file_upload"
+    ],
+    "documentation": "https://www.home-assistant.io/integrations/zha",
+    "iot_class": "local_polling",
+    "loggers": [
+      "aiosqlite",
+      "bellows",
+      "crccheck",
+      "pure_pcapy3",
+      "zhaquirks",
+      "zigpy",
+      "zigpy_deconz",
+      "zigpy_xbee",
+      "zigpy_zigate",
+      "zigpy_znp",
+      "universal_silabs_flasher"
+    ],
+    "requirements": [
+      "bellows==0.36.8",
+      "pyserial==3.5",
+      "pyserial-asyncio==0.6",
+      "zha-quirks==0.0.106",
+      "zigpy-deconz==0.21.1",
+      "zigpy==0.59.0",
+      "zigpy-xbee==0.19.0",
+      "zigpy-zigate==0.11.0",
+      "zigpy-znp==0.11.6",
+      "universal-silabs-flasher==0.0.14",
+      "pyserial-asyncio-fast==0.11"
+    ],
+    "usb": [
+      {
+        "vid": "10C4",
+        "pid": "EA60",
+        "description": "*2652*",
+        "known_devices": [
+          "slae.sh cc2652rb stick"
+        ]
+      },
+      {
+        "vid": "1A86",
+        "pid": "55D4",
+        "description": "*sonoff*plus*",
+        "known_devices": [
+          "sonoff zigbee dongle plus v2"
+        ]
+      },
+      {
+        "vid": "10C4",
+        "pid": "EA60",
+        "description": "*sonoff*plus*",
+        "known_devices": [
+          "sonoff zigbee dongle plus"
+        ]
+      },
+      {
+        "vid": "10C4",
+        "pid": "EA60",
+        "description": "*tubeszb*",
+        "known_devices": [
+          "TubesZB Coordinator"
+        ]
+      },
+      {
+        "vid": "1A86",
+        "pid": "7523",
+        "description": "*tubeszb*",
+        "known_devices": [
+          "TubesZB Coordinator"
+        ]
+      },
+      {
+        "vid": "1A86",
+        "pid": "7523",
+        "description": "*zigstar*",
+        "known_devices": [
+          "ZigStar Coordinators"
+        ]
+      },
+      {
+        "vid": "1CF1",
+        "pid": "0030",
+        "description": "*conbee*",
+        "known_devices": [
+          "Conbee II"
+        ]
+      },
+      {
+        "vid": "10C4",
+        "pid": "8A2A",
+        "description": "*zigbee*",
+        "known_devices": [
+          "Nortek HUSBZB-1"
+        ]
+      },
+      {
+        "vid": "0403",
+        "pid": "6015",
+        "description": "*zigate*",
+        "known_devices": [
+          "ZiGate+"
+        ]
+      },
+      {
+        "vid": "10C4",
+        "pid": "EA60",
+        "description": "*zigate*",
+        "known_devices": [
+          "ZiGate"
+        ]
+      },
+      {
+        "vid": "10C4",
+        "pid": "8B34",
+        "description": "*bv 2010/10*",
+        "known_devices": [
+          "Bitron Video AV2010/10"
+        ]
+      }
+    ],
+    "zeroconf": [
+      {
+        "type": "_esphomelib._tcp.local.",
+        "name": "tube*"
+      },
+      {
+        "type": "_zigate-zigbee-gateway._tcp.local.",
+        "name": "*zigate*"
+      },
+      {
+        "type": "_zigstar_gw._tcp.local.",
+        "name": "*zigstar*"
+      },
+      {
+        "type": "_uzg-01._tcp.local.",
+        "name": "uzg-01*"
+      },
+      {
+        "type": "_slzb-06._tcp.local.",
+        "name": "slzb-06*"
+      }
+    ],
+    "is_built_in": true
+  },
+  "data": {
+    "config": {
+      "custom_quirks_path": "/config/custom_quirks/",
+      "device_config": {},
+      "enable_quirks": true
+    },
+    "config_entry": {
+      "entry_id": "fcd99f2fc9a3842a6c6d8115908da934",
+      "version": 3,
+      "domain": "zha",
+      "title": "Yellow Zigbee module - Nabu Casa",
+      "data": {
+        "device": {
+          "path": "/dev/ttyAMA1",
+          "flow_control": "software",
+          "baudrate": 115200
+        },
+        "radio_type": "ezsp"
+      },
+      "options": {},
+      "pref_disable_new_entities": false,
+      "pref_disable_polling": false,
+      "source": "user",
+      "unique_id": null,
+      "disabled_by": null
+    },
+    "application_state": {
+      "node_info": {
+        "nwk": 0,
+        "ieee": "**REDACTED**",
+        "logical_type": 0
+      },
+      "network_info": {
+        "extended_pan_id": "**REDACTED**",
+        "pan_id": 62135,
+        "nwk_update_id": 1,
+        "nwk_manager_id": 0,
+        "channel": 15,
+        "channel_mask": 134215680,
+        "security_level": 5,
+        "network_key": "**REDACTED**",
+        "tc_link_key": {
+          "key": [
+            90,
+            105,
+            103,
+            66,
+            101,
+            101,
+            65,
+            108,
+            108,
+            105,
+            97,
+            110,
+            99,
+            101,
+            48,
+            57
+          ],
+          "tx_counter": 40960,
+          "rx_counter": 0,
+          "seq": 0,
+          "partner_ieee": "**REDACTED**"
+        },
+        "key_table": [],
+        "children": [],
+        "nwk_addresses": {},
+        "stack_specific": {
+          "ezsp": {
+            "hashed_tclk": "e9dd470feae34313685a0a3d03f9ff53"
+          }
+        },
+        "metadata": {
+          "ezsp": {
+            "manufacturer": "Nabu Casa",
+            "board": "Yellow v1.3",
+            "version": "7.3.2.0 build 212",
+            "stack_version": 12,
+            "can_burn_userdata_custom_eui64": true,
+            "can_rewrite_custom_eui64": true
+          }
+        },
+        "source": "bellows@0.36.8"
+      },
+      "counters": {
+        "controller_app_counters": {
+          "broadcast_rx": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='broadcast_rx', _raw_value=27, reset_count=0, _last_reset_value=0)"
+          },
+          "unicast_rx": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='unicast_rx', _raw_value=49940, reset_count=0, _last_reset_value=0)"
+          },
+          "unicast_tx_success": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='unicast_tx_success', _raw_value=22749, reset_count=0, _last_reset_value=0)"
+          },
+          "broadcast_tx_success_unexpected": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='broadcast_tx_success_unexpected', _raw_value=33, reset_count=0, _last_reset_value=0)"
+          },
+          "unicast_tx_success_duplicate": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='unicast_tx_success_duplicate', _raw_value=4, reset_count=0, _last_reset_value=0)"
+          },
+          "unicast_tx_failure": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='unicast_tx_failure', _raw_value=22, reset_count=0, _last_reset_value=0)"
+          },
+          "unicast_tx_success_unexpected": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='unicast_tx_success_unexpected', _raw_value=3, reset_count=0, _last_reset_value=0)"
+          },
+          "broadcast_tx_success": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='broadcast_tx_success', _raw_value=1, reset_count=0, _last_reset_value=0)"
+          }
+        },
+        "ezsp_counters": {
+          "MAC_RX_BROADCAST": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='MAC_RX_BROADCAST', _raw_value=2773, reset_count=22, _last_reset_value=95147)"
+          },
+          "MAC_TX_BROADCAST": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='MAC_TX_BROADCAST', _raw_value=121, reset_count=22, _last_reset_value=4299)"
+          },
+          "MAC_RX_UNICAST": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='MAC_RX_UNICAST', _raw_value=3226, reset_count=22, _last_reset_value=83684)"
+          },
+          "MAC_TX_UNICAST_SUCCESS": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='MAC_TX_UNICAST_SUCCESS', _raw_value=2648, reset_count=22, _last_reset_value=67219)"
+          },
+          "MAC_TX_UNICAST_RETRY": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='MAC_TX_UNICAST_RETRY', _raw_value=167, reset_count=22, _last_reset_value=3948)"
+          },
+          "MAC_TX_UNICAST_FAILED": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='MAC_TX_UNICAST_FAILED', _raw_value=12, reset_count=22, _last_reset_value=303)"
+          },
+          "APS_DATA_RX_BROADCAST": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='APS_DATA_RX_BROADCAST', _raw_value=1, reset_count=22, _last_reset_value=33)"
+          },
+          "APS_DATA_TX_BROADCAST": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='APS_DATA_TX_BROADCAST', _raw_value=1, reset_count=22, _last_reset_value=33)"
+          },
+          "APS_DATA_RX_UNICAST": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='APS_DATA_RX_UNICAST', _raw_value=1913, reset_count=22, _last_reset_value=48021)"
+          },
+          "APS_DATA_TX_UNICAST_SUCCESS": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='APS_DATA_TX_UNICAST_SUCCESS', _raw_value=836, reset_count=22, _last_reset_value=21914)"
+          },
+          "APS_DATA_TX_UNICAST_RETRY": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='APS_DATA_TX_UNICAST_RETRY', _raw_value=0, reset_count=22, _last_reset_value=0)"
+          },
+          "APS_DATA_TX_UNICAST_FAILED": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='APS_DATA_TX_UNICAST_FAILED', _raw_value=0, reset_count=22, _last_reset_value=22)"
+          },
+          "ROUTE_DISCOVERY_INITIATED": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='ROUTE_DISCOVERY_INITIATED', _raw_value=3, reset_count=22, _last_reset_value=430)"
+          },
+          "NEIGHBOR_ADDED": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='NEIGHBOR_ADDED', _raw_value=22, reset_count=22, _last_reset_value=195)"
+          },
+          "NEIGHBOR_REMOVED": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='NEIGHBOR_REMOVED', _raw_value=22, reset_count=22, _last_reset_value=169)"
+          },
+          "NEIGHBOR_STALE": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='NEIGHBOR_STALE', _raw_value=28, reset_count=22, _last_reset_value=168)"
+          },
+          "JOIN_INDICATION": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='JOIN_INDICATION', _raw_value=0, reset_count=22, _last_reset_value=0)"
+          },
+          "CHILD_REMOVED": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='CHILD_REMOVED', _raw_value=0, reset_count=22, _last_reset_value=0)"
+          },
+          "ASH_OVERFLOW_ERROR": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='ASH_OVERFLOW_ERROR', _raw_value=0, reset_count=22, _last_reset_value=0)"
+          },
+          "ASH_FRAMING_ERROR": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='ASH_FRAMING_ERROR', _raw_value=0, reset_count=22, _last_reset_value=0)"
+          },
+          "ASH_OVERRUN_ERROR": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='ASH_OVERRUN_ERROR', _raw_value=0, reset_count=22, _last_reset_value=0)"
+          },
+          "NWK_FRAME_COUNTER_FAILURE": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='NWK_FRAME_COUNTER_FAILURE', _raw_value=0, reset_count=22, _last_reset_value=0)"
+          },
+          "APS_FRAME_COUNTER_FAILURE": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='APS_FRAME_COUNTER_FAILURE', _raw_value=0, reset_count=22, _last_reset_value=0)"
+          },
+          "UTILITY": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='UTILITY', _raw_value=0, reset_count=22, _last_reset_value=0)"
+          },
+          "APS_LINK_KEY_NOT_AUTHORIZED": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='APS_LINK_KEY_NOT_AUTHORIZED', _raw_value=0, reset_count=22, _last_reset_value=0)"
+          },
+          "NWK_DECRYPTION_FAILURE": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='NWK_DECRYPTION_FAILURE', _raw_value=3, reset_count=22, _last_reset_value=1348)"
+          },
+          "APS_DECRYPTION_FAILURE": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='APS_DECRYPTION_FAILURE', _raw_value=0, reset_count=22, _last_reset_value=0)"
+          },
+          "ALLOCATE_PACKET_BUFFER_FAILURE": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='ALLOCATE_PACKET_BUFFER_FAILURE', _raw_value=0, reset_count=22, _last_reset_value=0)"
+          },
+          "RELAYED_UNICAST": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='RELAYED_UNICAST', _raw_value=0, reset_count=22, _last_reset_value=0)"
+          },
+          "PHY_TO_MAC_QUEUE_LIMIT_REACHED": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='PHY_TO_MAC_QUEUE_LIMIT_REACHED', _raw_value=0, reset_count=22, _last_reset_value=0)"
+          },
+          "PACKET_VALIDATE_LIBRARY_DROPPED_COUNT": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='PACKET_VALIDATE_LIBRARY_DROPPED_COUNT', _raw_value=0, reset_count=22, _last_reset_value=0)"
+          },
+          "TYPE_NWK_RETRY_OVERFLOW": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='TYPE_NWK_RETRY_OVERFLOW', _raw_value=0, reset_count=22, _last_reset_value=0)"
+          },
+          "PHY_CCA_FAIL_COUNT": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='PHY_CCA_FAIL_COUNT', _raw_value=34, reset_count=22, _last_reset_value=826)"
+          },
+          "BROADCAST_TABLE_FULL": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='BROADCAST_TABLE_FULL', _raw_value=0, reset_count=22, _last_reset_value=0)"
+          },
+          "PTA_LO_PRI_REQUESTED": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='PTA_LO_PRI_REQUESTED', _raw_value=0, reset_count=22, _last_reset_value=0)"
+          },
+          "PTA_HI_PRI_REQUESTED": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='PTA_HI_PRI_REQUESTED', _raw_value=0, reset_count=22, _last_reset_value=0)"
+          },
+          "PTA_LO_PRI_DENIED": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='PTA_LO_PRI_DENIED', _raw_value=0, reset_count=22, _last_reset_value=0)"
+          },
+          "PTA_HI_PRI_DENIED": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='PTA_HI_PRI_DENIED', _raw_value=0, reset_count=22, _last_reset_value=0)"
+          },
+          "PTA_LO_PRI_TX_ABORTED": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='PTA_LO_PRI_TX_ABORTED', _raw_value=0, reset_count=22, _last_reset_value=0)"
+          },
+          "PTA_HI_PRI_TX_ABORTED": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='PTA_HI_PRI_TX_ABORTED', _raw_value=0, reset_count=22, _last_reset_value=0)"
+          },
+          "ADDRESS_CONFLICT_SENT": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='ADDRESS_CONFLICT_SENT', _raw_value=0, reset_count=22, _last_reset_value=0)"
+          },
+          "EZSP_FREE_BUFFERS": {
+            "__type": "<class 'zigpy.state.Counter'>",
+            "repr": "Counter(name='EZSP_FREE_BUFFERS', _raw_value=248, reset_count=22, _last_reset_value=0)"
+          }
+        }
+      },
+      "broadcast_counters": {},
+      "device_counters": {},
+      "group_counters": {}
+    },
+    "energy_scan": {
+      "11": 31.01324838787301,
+      "12": 25.74050169409602,
+      "13": 31.01324838787301,
+      "14": 25.74050169409602,
+      "15": 96.19660508390695,
+      "16": 12.244260188723507,
+      "17": 13.711043742539033,
+      "18": 12.244260188723507,
+      "19": 15.32285793082191,
+      "20": 21.09014924761344,
+      "21": 46.26944564832987,
+      "22": 59.15797905332195,
+      "23": 99.363464769115,
+      "24": 99.6205874545284,
+      "25": 99.17601569142556,
+      "26": 98.43344238842926
+    },
+    "versions": {
+      "bellows": "0.36.8",
+      "zigpy": "0.59.0",
+      "zigpy_deconz": "0.21.1",
+      "zigpy_xbee": "0.19.0",
+      "zigpy_znp": "0.11.6",
+      "zigpy_zigate": "0.11.0",
+      "zhaquirks": "0.0.106"
+    }
+  }
+}

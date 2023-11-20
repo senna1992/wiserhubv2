@@ -1,0 +1,1202 @@
+{
+  "home_assistant": {
+    "installation_type": "Home Assistant OS",
+    "version": "2023.11.2",
+    "dev": false,
+    "hassio": true,
+    "virtualenv": false,
+    "python_version": "3.11.6",
+    "docker": true,
+    "arch": "aarch64",
+    "timezone": "Europe/Berlin",
+    "os_name": "Linux",
+    "os_version": "6.1.21-v8",
+    "supervisor": "2023.11.3",
+    "host_os": "Home Assistant OS 11.1",
+    "docker_version": "24.0.6",
+    "chassis": "embedded",
+    "run_as_root": true
+  },
+  "custom_components": {
+    "hacs": {
+      "version": "1.33.0",
+      "requirements": [
+        "aiogithubapi>=22.10.1"
+      ]
+    },
+    "dreame_vacuum": {
+      "version": "v2.0.0b6",
+      "requirements": [
+        "pillow",
+        "numpy",
+        "pybase64",
+        "requests",
+        "pycryptodome",
+        "python-miio",
+        "py-mini-racer",
+        "tzlocal"
+      ]
+    },
+    "wiser": {
+      "version": "3.4.0",
+      "requirements": [
+        "aioWiserHeatAPI==1.4.0"
+      ]
+    },
+    "o365": {
+      "version": "v4.4.4",
+      "requirements": [
+        "O365==2.0.28",
+        "BeautifulSoup4>=4.10.0"
+      ]
+    },
+    "waste_collection_schedule": {
+      "version": "1.43.0",
+      "requirements": [
+        "icalendar",
+        "recurring_ical_events",
+        "icalevents",
+        "bs4",
+        "lxml"
+      ]
+    },
+    "ring_martinpham": {
+      "version": "0.0.1",
+      "requirements": []
+    }
+  },
+  "integration_manifest": {
+    "domain": "wiser",
+    "name": "Drayton Wiser Integration for Home Assistant",
+    "codeowners": [
+      "@asantaga",
+      "@msp1974"
+    ],
+    "config_flow": true,
+    "dependencies": [
+      "http",
+      "websocket_api",
+      "frontend",
+      "lovelace"
+    ],
+    "documentation": "https://github.com/asantaga/wiserHomeAssistantPlatform/blob/master/README.md",
+    "iot_class": "local_polling",
+    "issue_tracker": "https://github.com/asantaga/wiserHomeAssistantPlatform/issues",
+    "requirements": [
+      "aioWiserHeatAPI==1.4.0"
+    ],
+    "version": "3.4.0",
+    "zeroconf": [
+      {
+        "type": "_http._tcp.local.",
+        "name": "wiser*"
+      }
+    ],
+    "is_built_in": false
+  },
+  "data": {
+    "Domain": {
+      "Cloud": {
+        "DetailedPublishing": true,
+        "EnableFullScheduleTelemetry": false,
+        "BlockPublishing": {
+          "RoomTimeSeries": false,
+          "EcoMode": false,
+          "BoilerOnOffEvent": true,
+          "HotWaterOnOffEvent": true,
+          "PercentageDemand": true,
+          "FotaProgress": false,
+          "SupportPackage": false,
+          "PairingToken": false,
+          "Notification": false,
+          "Describe": false,
+          "EntireDataModel": false,
+          "ScheduleUpdate": false,
+          "SmartPlugUpdate": false,
+          "LightUpdate": false,
+          "ShutterUpdate": false,
+          "TemperatureChangeEvent": false,
+          "EventSeriesDiagnostic": false,
+          "Heartbeat": false,
+          "AutomationEvent": false,
+          "SensorEvent": false,
+          "EquipmentConfigEvent": false,
+          "EquipmentTimeSeries": false,
+          "EquipmentDeletionEvent": false,
+          "EVSEActionRequest": false,
+          "EquipmentSyncEvent": false,
+          "ApplicationPowerEvent": false,
+          "WeatherConfigEvent": false,
+          "EVSocketChargingStatusChangeEvent": false,
+          "EVSocketStatusChangeEvent": false,
+          "PCMOnlineNotification": false
+        },
+        "WiserApiHost": "api-nl.wiserair.com",
+        "BootStrapApiHost": "bootstrap.gl.struxurewarecloud.com",
+        "FioIsRegistered": true
+      },
+      "HeatingChannel": [
+        {
+          "id": 1,
+          "Name": "Channel-1",
+          "PercentageDemand": 0,
+          "DemandOnOffOutput": "Off",
+          "HeatingRelayState": "Off",
+          "IsSmartValvePreventingDemand": false,
+          "DemandIsAsynchronous": true
+        }
+      ],
+      "Room": [
+        {
+          "id": 1,
+          "HeatingRate": 1200,
+          "ClimateCapabilities": {
+            "MinimumHeatSetpoint": 50,
+            "MaximumHeatSetpoint": 300,
+            "MinimumCoolSetpoint": 180,
+            "MaximumCoolSetpoint": 300
+          },
+          "Name": "Schlafzimmer",
+          "Mode": "Manual",
+          "WindowDetectionActive": false,
+          "OccupiedToUnoccupiedDelay": 5,
+          "MinimumOccupiedTime": 20,
+          "CalculatedTemperature": -32768,
+          "CurrentSetPoint": -200,
+          "SetpointOrigin": "FromNoControl",
+          "DisplayedSetPoint": -200,
+          "Invalid": "NothingAssigned",
+          "EffectiveMode": "Manual",
+          "ControlDirection": "None",
+          "Occupancy": "Occupied",
+          "OccupancyCapable": false
+        },
+        {
+          "id": 6,
+          "HeatingRate": 1200,
+          "ClimateCapabilities": {
+            "MinimumHeatSetpoint": 50,
+            "MaximumHeatSetpoint": 300,
+            "MinimumCoolSetpoint": 180,
+            "MaximumCoolSetpoint": 300
+          },
+          "Name": "Garage",
+          "Mode": "Manual",
+          "WindowDetectionActive": false,
+          "OccupiedToUnoccupiedDelay": 5,
+          "MinimumOccupiedTime": 20,
+          "CalculatedTemperature": -32768,
+          "CurrentSetPoint": -200,
+          "SetpointOrigin": "FromNoControl",
+          "DisplayedSetPoint": -200,
+          "Invalid": "NothingAssigned",
+          "EffectiveMode": "Manual",
+          "ControlDirection": "None",
+          "Occupancy": "Occupied",
+          "OccupancyCapable": false
+        },
+        {
+          "id": 3,
+          "HeatingRate": 1200,
+          "ClimateCapabilities": {
+            "MinimumHeatSetpoint": 50,
+            "MaximumHeatSetpoint": 300,
+            "MinimumCoolSetpoint": 180,
+            "MaximumCoolSetpoint": 300
+          },
+          "Name": "k\u00fcche",
+          "Mode": "Manual",
+          "WindowDetectionActive": false,
+          "OccupiedToUnoccupiedDelay": 5,
+          "MinimumOccupiedTime": 20,
+          "CalculatedTemperature": -32768,
+          "CurrentSetPoint": -200,
+          "SetpointOrigin": "FromNoControl",
+          "DisplayedSetPoint": -200,
+          "Invalid": "NothingAssigned",
+          "EffectiveMode": "Manual",
+          "ControlDirection": "None",
+          "Occupancy": "Occupied",
+          "OccupancyCapable": false
+        },
+        {
+          "id": 4,
+          "HeatingRate": 1200,
+          "ClimateCapabilities": {
+            "MinimumHeatSetpoint": 50,
+            "MaximumHeatSetpoint": 300,
+            "MinimumCoolSetpoint": 180,
+            "MaximumCoolSetpoint": 300
+          },
+          "Name": "Wohnzimmer",
+          "Mode": "Manual",
+          "WindowDetectionActive": false,
+          "OccupiedToUnoccupiedDelay": 5,
+          "MinimumOccupiedTime": 20,
+          "CalculatedTemperature": -32768,
+          "CurrentSetPoint": -200,
+          "SetpointOrigin": "FromNoControl",
+          "DisplayedSetPoint": -200,
+          "Invalid": "NothingAssigned",
+          "EffectiveMode": "Manual",
+          "ControlDirection": "None",
+          "Occupancy": "Occupied",
+          "OccupancyCapable": false
+        },
+        {
+          "id": 5,
+          "HeatingRate": 1200,
+          "ClimateCapabilities": {
+            "MinimumHeatSetpoint": 50,
+            "MaximumHeatSetpoint": 300,
+            "MinimumCoolSetpoint": 180,
+            "MaximumCoolSetpoint": 300
+          },
+          "Name": "Keller",
+          "Mode": "Manual",
+          "WindowDetectionActive": false,
+          "OccupiedToUnoccupiedDelay": 5,
+          "MinimumOccupiedTime": 20,
+          "CalculatedTemperature": -32768,
+          "CurrentSetPoint": -200,
+          "SetpointOrigin": "FromNoControl",
+          "DisplayedSetPoint": -200,
+          "Invalid": "NothingAssigned",
+          "EffectiveMode": "Manual",
+          "ControlDirection": "None",
+          "Occupancy": "Occupied",
+          "OccupancyCapable": false
+        },
+        {
+          "id": 7,
+          "HeatingRate": 1200,
+          "ClimateCapabilities": {
+            "MinimumHeatSetpoint": 50,
+            "MaximumHeatSetpoint": 300,
+            "MinimumCoolSetpoint": 180,
+            "MaximumCoolSetpoint": 300
+          },
+          "Name": "Flur",
+          "Mode": "Manual",
+          "WindowDetectionActive": false,
+          "OccupiedToUnoccupiedDelay": 5,
+          "MinimumOccupiedTime": 20,
+          "CalculatedTemperature": -32768,
+          "CurrentSetPoint": -200,
+          "SetpointOrigin": "FromNoControl",
+          "DisplayedSetPoint": -200,
+          "Invalid": "NothingAssigned",
+          "EffectiveMode": "Manual",
+          "ControlDirection": "None",
+          "Occupancy": "Occupied",
+          "OccupancyCapable": false
+        },
+        {
+          "id": 8,
+          "HeatingRate": 1200,
+          "ClimateCapabilities": {
+            "MinimumHeatSetpoint": 50,
+            "MaximumHeatSetpoint": 300,
+            "MinimumCoolSetpoint": 180,
+            "MaximumCoolSetpoint": 300
+          },
+          "Name": "Esszimmer",
+          "Mode": "Manual",
+          "WindowDetectionActive": false,
+          "OccupiedToUnoccupiedDelay": 5,
+          "MinimumOccupiedTime": 20,
+          "CalculatedTemperature": -32768,
+          "CurrentSetPoint": -200,
+          "SetpointOrigin": "FromNoControl",
+          "DisplayedSetPoint": -200,
+          "Invalid": "NothingAssigned",
+          "EffectiveMode": "Manual",
+          "ControlDirection": "None",
+          "Occupancy": "Occupied",
+          "OccupancyCapable": false
+        },
+        {
+          "id": 9,
+          "HeatingRate": 1200,
+          "ClimateCapabilities": {
+            "MinimumHeatSetpoint": 50,
+            "MaximumHeatSetpoint": 300,
+            "MinimumCoolSetpoint": 180,
+            "MaximumCoolSetpoint": 300
+          },
+          "Name": "Balkon",
+          "Mode": "Manual",
+          "WindowDetectionActive": false,
+          "OccupiedToUnoccupiedDelay": 5,
+          "MinimumOccupiedTime": 20,
+          "CalculatedTemperature": -32768,
+          "CurrentSetPoint": -200,
+          "SetpointOrigin": "FromNoControl",
+          "DisplayedSetPoint": -200,
+          "Invalid": "NothingAssigned",
+          "EffectiveMode": "Manual",
+          "ControlDirection": "None",
+          "Occupancy": "Occupied",
+          "OccupancyCapable": false
+        }
+      ],
+      "Device": [
+        {
+          "id": 0,
+          "NodeId": 0,
+          "ProductType": "Controller",
+          "ProductIdentifier": "Controller",
+          "ActiveFirmwareVersion": "4.20.2",
+          "ModelIdentifier": "WT704R1B30S4",
+          "Type": "ZigbeeDevice",
+          "UUID": "7633acae-eaad-519c-84a7-cc74760ad147",
+          "DeviceLockEnabled": false,
+          "DisplayedSignalStrength": "VeryGood",
+          "ReceptionOfController": {
+            "Rssi": -46
+          }
+        },
+        {
+          "id": 5,
+          "NodeId": 5,
+          "ProductType": "PowerTagE",
+          "ProductIdentifier": "R9M40",
+          "ActiveFirmwareVersion": "004.000.424",
+          "ModelIdentifier": "Unknown",
+          "SerialNumber": "ANON_SERIAL",
+          "ProductModel": "R9 M63 3P",
+          "OtaVersion": 0,
+          "RfId": 3791906759,
+          "Type": "GreenPowerDevice",
+          "UUID": "f0b7dd34-8b2b-50f3-b23a-0777a88232c0",
+          "DeviceLockEnabled": false,
+          "DisplayedSignalStrength": "VeryGood",
+          "ReceptionOfController": {
+            "Rssi": -49,
+            "Lqi": 255
+          },
+          "BindingsStatus": "SetCorrectly",
+          "ReportConfigStatus": "SetCorrectly",
+          "AttributesStatus": "SetCorrectly"
+        },
+        {
+          "id": 6,
+          "NodeId": 6,
+          "ProductType": "PowerTagE",
+          "ProductIdentifier": "R9M40",
+          "ActiveFirmwareVersion": "003.000.396",
+          "ModelIdentifier": "Unknown",
+          "SerialNumber": "ANON_SERIAL",
+          "ProductModel": "R9 M63 3P",
+          "OtaVersion": 0,
+          "RfId": 3791761634,
+          "Type": "GreenPowerDevice",
+          "UUID": "cd3c2c83-c087-5409-80f7-338e3d38a12a",
+          "Name": "Herd und Ofen",
+          "DeviceLockEnabled": false,
+          "DisplayedSignalStrength": "VeryGood",
+          "ReceptionOfController": {
+            "Rssi": -44,
+            "Lqi": 255
+          },
+          "BindingsStatus": "SetCorrectly",
+          "ReportConfigStatus": "SetCorrectly",
+          "AttributesStatus": "SetCorrectly"
+        },
+        {
+          "id": 8,
+          "NodeId": 8,
+          "ProductType": "PowerTagE",
+          "ProductIdentifier": "R9M20",
+          "ActiveFirmwareVersion": "004.000.439",
+          "ModelIdentifier": "Unknown",
+          "SerialNumber": "ANON_SERIAL",
+          "ProductModel": "R9 M63 1P+W",
+          "OtaVersion": 0,
+          "RfId": 3792003611,
+          "Type": "GreenPowerDevice",
+          "UUID": "41a46de6-7431-5473-b879-019232812e26",
+          "Name": "Garage",
+          "DeviceLockEnabled": false,
+          "DisplayedSignalStrength": "VeryGood",
+          "ReceptionOfController": {
+            "Rssi": -87,
+            "Lqi": 255
+          },
+          "BindingsStatus": "SetCorrectly",
+          "ReportConfigStatus": "SetCorrectly",
+          "AttributesStatus": "SetCorrectly"
+        },
+        {
+          "id": 9,
+          "NodeId": 9,
+          "ProductType": "PowerTagE",
+          "ProductIdentifier": "R9M20",
+          "ActiveFirmwareVersion": "004.000.439",
+          "ModelIdentifier": "Unknown",
+          "SerialNumber": "ANON_SERIAL",
+          "ProductModel": "R9 M63 1P+W",
+          "OtaVersion": 0,
+          "RfId": 3791974749,
+          "Type": "GreenPowerDevice",
+          "UUID": "3cf6d910-41b7-5a40-8206-ccf10de93d5f",
+          "Name": "Modem und Router",
+          "DeviceLockEnabled": false,
+          "DisplayedSignalStrength": "VeryGood",
+          "ReceptionOfController": {
+            "Rssi": -53,
+            "Lqi": 255
+          },
+          "BindingsStatus": "SetCorrectly",
+          "ReportConfigStatus": "SetCorrectly",
+          "AttributesStatus": "SetCorrectly"
+        },
+        {
+          "id": 10,
+          "NodeId": 10,
+          "ProductType": "PowerTagE",
+          "ProductIdentifier": "R9M40",
+          "ActiveFirmwareVersion": "004.000.424",
+          "ModelIdentifier": "Unknown",
+          "SerialNumber": "ANON_SERIAL",
+          "ProductModel": "R9 M63 3P",
+          "OtaVersion": 0,
+          "RfId": 3791906762,
+          "Type": "GreenPowerDevice",
+          "UUID": "4b59da57-b673-59dd-896f-3791705be152",
+          "Name": "Durchlauferhitzer",
+          "DeviceLockEnabled": false,
+          "DisplayedSignalStrength": "VeryGood",
+          "ReceptionOfController": {
+            "Rssi": -42,
+            "Lqi": 255
+          },
+          "BindingsStatus": "SetCorrectly",
+          "ReportConfigStatus": "SetCorrectly",
+          "AttributesStatus": "SetCorrectly"
+        }
+      ],
+      "Zigbee": {
+        "NetworkChannel": 25,
+        "NoSignalReset": 9,
+        "TargetEBLFile": "../../opt/efr32/firmware_2.8.0.0.bin",
+        "PanId": 36813,
+        "ZigbeeModuleVersion": "02.43.00.00",
+        "TargetEBLFileUnsigned": "../../opt/efr32/firmware_2.8.0.0.u.bin",
+        "NetworkChannelRescan": 4,
+        "ZigbeeEUI": "0C4314FFFE24456C"
+      },
+      "UpgradeInfo": [
+        {
+          "id": 1,
+          "FirmwareFilename": "105E-0800-00060600-0100-01FF.zigbee"
+        },
+        {
+          "id": 2,
+          "FirmwareFilename": "105E-0E00-01080000-0000-00FF.zigbee"
+        },
+        {
+          "id": 3,
+          "FirmwareFilename": "105E-0201-0000EA64-0000-0000.zigbee"
+        },
+        {
+          "id": 4,
+          "FirmwareFilename": "105E-04E1-0000A412-0000-0009.zigbee"
+        },
+        {
+          "id": 5,
+          "FirmwareFilename": "105E-04E1-0000EA63-0100-01FF.zigbee"
+        },
+        {
+          "id": 6,
+          "FirmwareFilename": "105E-05E1-00000018-0000-0200.zigbee"
+        },
+        {
+          "id": 7,
+          "FirmwareFilename": "105E-0A00-00007D02-0000-0000.zigbee"
+        },
+        {
+          "id": 8,
+          "FirmwareFilename": "105E-000B-020A01FF-0100-02FF.zigbee"
+        },
+        {
+          "id": 9,
+          "FirmwareFilename": "105E-000C-020A01FF-0100-02FF.zigbee"
+        },
+        {
+          "id": 10,
+          "FirmwareFilename": "105E-003F-020901FF-0000-01FF.zigbee"
+        },
+        {
+          "id": 11,
+          "FirmwareFilename": "105E-0016-020901FF-0000-01FF.zigbee"
+        },
+        {
+          "id": 12,
+          "FirmwareFilename": "105E-003D-020901FF-0000-01FF.zigbee"
+        },
+        {
+          "id": 13,
+          "FirmwareFilename": "105E-000D-020C02FF-0000-01FF.zigbee"
+        },
+        {
+          "id": 14,
+          "FirmwareFilename": "105E-0010-020A00FF-0000-01FF.zigbee"
+        },
+        {
+          "id": 15,
+          "FirmwareFilename": "105E-0011-020B0FFF-0000-02FF.zigbee"
+        },
+        {
+          "id": 16,
+          "FirmwareFilename": "105E-0012-020D00FF-0000-01FF.zigbee"
+        },
+        {
+          "id": 17,
+          "FirmwareFilename": "105E-04b0-01000400-0000-00FF.zigbee"
+        },
+        {
+          "id": 18,
+          "FirmwareFilename": "105E-1200-01003500-0000-00FF.zigbee"
+        },
+        {
+          "id": 19,
+          "FirmwareFilename": "105E-1201-01003500-0000-00FF.zigbee"
+        },
+        {
+          "id": 20,
+          "FirmwareFilename": "105E-1202-01003500-0000-00FF.zigbee"
+        },
+        {
+          "id": 21,
+          "FirmwareFilename": "105E-1203-01003500-0000-00FF.zigbee"
+        },
+        {
+          "id": 22,
+          "FirmwareFilename": "105E-1204-01003500-0000-00FF.zigbee"
+        },
+        {
+          "id": 23,
+          "FirmwareFilename": "120B-210B-00000022-0000-FFFF.zigbee"
+        },
+        {
+          "id": 24,
+          "FirmwareFilename": "105E-0024-01060542-0000-09FF.zigbee"
+        },
+        {
+          "id": 25,
+          "FirmwareFilename": "105E-0025-01060542-0000-09FF.zigbee"
+        },
+        {
+          "id": 26,
+          "FirmwareFilename": "105E-0026-01060542-0000-09FF.zigbee"
+        },
+        {
+          "id": 27,
+          "FirmwareFilename": "105E-0027-01060542-0000-09FF.zigbee"
+        },
+        {
+          "id": 28,
+          "FirmwareFilename": "105E-0043-020706FF-0000-0000.zigbee"
+        },
+        {
+          "id": 29,
+          "FirmwareFilename": "105E-0051-020A00FF-0000-00FF.zigbee"
+        },
+        {
+          "id": 30,
+          "FirmwareFilename": "105E-1401-01040200-0220-0220.zigbee"
+        },
+        {
+          "id": 31,
+          "FirmwareFilename": "105E-1400-000B0000-0143-0143.zigbee"
+        },
+        {
+          "id": 32,
+          "FirmwareFilename": "105E-0013-020B0FFF-0000-02FF.zigbee"
+        }
+      ],
+      "Automation": [
+        {
+          "id": 1,
+          "Problem": "InvalidTrigger",
+          "Name": "K\u00fchlschrank",
+          "IconId": 0,
+          "Enabled": true,
+          "EnableNotification": true
+        }
+      ],
+      "PTE": [
+        {
+          "id": 5,
+          "EquipmentId": 5,
+          "DeviceId": 5,
+          "NumberOfPhases": "Three",
+          "Configured": "Configured",
+          "UUID": "aac97ed4-02ba-501c-9537-57f7f5788133",
+          "InstallationType": "Bidirectional",
+          "Direction": "Reverse",
+          "GridLimit": 60,
+          "GridLimitUom": "A",
+          "OperatingStatus": "NormalOperation",
+          "FaultStatus": "NoFault",
+          "EnergyExport": "Unable",
+          "RawTotalActivePower": -27,
+          "EquipmentData": {
+            "id": 5,
+            "DeviceApplicationInstanceType": "PTE",
+            "DeviceApplicationInstanceId": 5,
+            "UUID": "131dd2db-d089-4a70-b6e4-16c1e04ee9d3",
+            "Controllable": false,
+            "CloudManaged": false,
+            "NumberOfPhases": "Three",
+            "Configured": "Configured",
+            "SelfConsumption": false,
+            "InstallationType": "Bidirectional",
+            "EnergyExport": "Unable",
+            "EquipmentFamily": "GRID",
+            "Direction": "Reverse",
+            "GridLimit": 60,
+            "GridLimitUom": "A",
+            "IconId": 1,
+            "OperatingStatus": "NormalOperation",
+            "FaultStatus": "NoFault",
+            "CurrentSummationDelivered": 714301,
+            "CurrentSummationReceived": 0,
+            "TotalActivePower": 27,
+            "RMSCurrent": 0,
+            "RMSCurrentPhB": 0,
+            "RMSCurrentPhC": 0,
+            "PcmMode": false
+          }
+        },
+        {
+          "id": 6,
+          "EquipmentId": 6,
+          "DeviceId": 6,
+          "NumberOfPhases": "Three",
+          "Configured": "Configured",
+          "UUID": "e32ad00e-a179-5710-9b85-1228d8f472b2",
+          "InstallationType": "Mono",
+          "OperatingStatus": "NormalOperation",
+          "FaultStatus": "NoFault",
+          "RawTotalActivePower": 0,
+          "EquipmentData": {
+            "id": 6,
+            "DeviceApplicationInstanceType": "PTE",
+            "DeviceApplicationInstanceId": 6,
+            "UUID": "18abb175-9c4d-4554-b60b-bb92531afb7f",
+            "Controllable": false,
+            "CloudManaged": false,
+            "NumberOfPhases": "Three",
+            "Configured": "Configured",
+            "SelfConsumption": false,
+            "InstallationType": "Mono",
+            "EquipmentName": "Herd und Ofen",
+            "EquipmentFamily": "Cooktop",
+            "IconId": 10,
+            "OperatingStatus": "NormalOperation",
+            "FaultStatus": "NoFault",
+            "CurrentSummationDelivered": 40999,
+            "CurrentSummationReceived": 0,
+            "TotalActivePower": 0,
+            "RMSCurrent": 0,
+            "RMSCurrentPhB": 0,
+            "RMSCurrentPhC": 0,
+            "PcmMode": false
+          }
+        },
+        {
+          "id": 8,
+          "EquipmentId": 7,
+          "DeviceId": 8,
+          "NumberOfPhases": "One",
+          "Configured": "Configured",
+          "UUID": "b6cbd837-b89a-5d64-a5cb-87d7b6266be8",
+          "InstallationType": "Mono",
+          "OperatingStatus": "NormalOperation",
+          "FaultStatus": "NoFault",
+          "RawTotalActivePower": 0,
+          "EquipmentData": {
+            "id": 7,
+            "DeviceApplicationInstanceType": "PTE",
+            "DeviceApplicationInstanceId": 8,
+            "UUID": "6f0723a2-ab46-48ae-b50b-e70450071963",
+            "Controllable": false,
+            "CloudManaged": false,
+            "NumberOfPhases": "One",
+            "Configured": "Configured",
+            "SelfConsumption": false,
+            "InstallationType": "Mono",
+            "EquipmentName": "Garage",
+            "EquipmentFamily": "ElectricalVehicle",
+            "IconId": 19,
+            "OperatingStatus": "NormalOperation",
+            "FaultStatus": "NoFault",
+            "CurrentSummationDelivered": 696,
+            "CurrentSummationReceived": 0,
+            "TotalActivePower": 0,
+            "ActivePower": 0,
+            "RMSCurrent": 0,
+            "RMSVoltage": 239,
+            "PcmMode": false
+          }
+        },
+        {
+          "id": 9,
+          "EquipmentId": 8,
+          "DeviceId": 9,
+          "NumberOfPhases": "One",
+          "Configured": "Configured",
+          "UUID": "fc79bb7f-f816-50c9-b3fe-585b3819a0a8",
+          "InstallationType": "Mono",
+          "OperatingStatus": "NormalOperation",
+          "FaultStatus": "NoFault",
+          "RawTotalActivePower": 10,
+          "EquipmentData": {
+            "id": 8,
+            "DeviceApplicationInstanceType": "PTE",
+            "DeviceApplicationInstanceId": 9,
+            "UUID": "caab5856-65e5-4f79-87de-8ec6c66544d0",
+            "Controllable": false,
+            "CloudManaged": false,
+            "NumberOfPhases": "One",
+            "Configured": "Configured",
+            "SelfConsumption": false,
+            "InstallationType": "Mono",
+            "EquipmentName": "Modem und Router",
+            "EquipmentFamily": "ElectricalPlug",
+            "IconId": 5,
+            "OperatingStatus": "NormalOperation",
+            "FaultStatus": "NoFault",
+            "CurrentSummationDelivered": 1124,
+            "CurrentSummationReceived": 0,
+            "TotalActivePower": 10,
+            "ActivePower": 10,
+            "RMSCurrent": 0,
+            "RMSVoltage": 239,
+            "PcmMode": false
+          }
+        },
+        {
+          "id": 10,
+          "EquipmentId": 9,
+          "DeviceId": 10,
+          "NumberOfPhases": "Three",
+          "Configured": "Configured",
+          "UUID": "c282a18d-58a6-5d19-a2a4-178ee32850cb",
+          "InstallationType": "Mono",
+          "OperatingStatus": "NormalOperation",
+          "FaultStatus": "NoFault",
+          "RawTotalActivePower": 0,
+          "EquipmentData": {
+            "id": 9,
+            "DeviceApplicationInstanceType": "PTE",
+            "DeviceApplicationInstanceId": 10,
+            "UUID": "66dc4dd7-4218-487c-bbee-800c6df0f9ad",
+            "Controllable": false,
+            "CloudManaged": false,
+            "NumberOfPhases": "Three",
+            "Configured": "Configured",
+            "SelfConsumption": false,
+            "InstallationType": "Mono",
+            "EquipmentName": "Durchlauferhitzer",
+            "EquipmentFamily": "WaterHeater",
+            "IconId": 8,
+            "OperatingStatus": "NormalOperation",
+            "FaultStatus": "NoFault",
+            "CurrentSummationDelivered": 174990,
+            "CurrentSummationReceived": 0,
+            "TotalActivePower": 0,
+            "RMSCurrent": 0,
+            "RMSCurrentPhB": 0,
+            "RMSCurrentPhC": 0,
+            "PcmMode": false
+          }
+        }
+      ],
+      "DeviceCapabilityMatrix": {
+        "Roomstat": true,
+        "ITRV": true,
+        "SmartPlug": true,
+        "UFH": true,
+        "UFHFloorTempSensor": true,
+        "UFHDewSensor": true,
+        "HACT": false,
+        "LACT": false,
+        "Light": true,
+        "Shutter": true,
+        "LoadController": true,
+        "SmartSocket": true,
+        "TwoGangLights": true,
+        "FLS": true,
+        "BoilerInterface": true,
+        "WindowDoorSensor": true,
+        "MotionLightSensor": true,
+        "WaterLeakageSensor": true,
+        "TemperatureHumiditySensor": true,
+        "PowerTagE": true,
+        "CFMT": true,
+        "EVSE": true,
+        "SmokeAlarmDevice": true,
+        "Airzone": true,
+        "NodOnPuck": true,
+        "NodOn16APuck": true,
+        "EVSocket": true,
+        "FilPilotePuck": true,
+        "IconicDevices": false
+      },
+      "FeatureCapability": {
+        "Automation": {
+          "MaxActions": 10,
+          "MaxTriggers": 10,
+          "MaxTimeConstraints": 10
+        },
+        "PTE": {
+          "EnergyExport": true
+        },
+        "ClimateDemandForUI": true
+      },
+      "System": {
+        "PairingStatus": "Paired",
+        "OverrideType": "None",
+        "provisionTokenSucceedCount": 1,
+        "provisionTokenFailCount": 571,
+        "provisionTokenRequestCount": 617,
+        "TimeZoneOffset": 60,
+        "AutomaticDaylightSaving": true,
+        "SystemMode": "Heat",
+        "FotaEnabled": true,
+        "ValveProtectionEnabled": false,
+        "AwayModeAffectsHotWater": true,
+        "AwayModeSetPointLimit": 230,
+        "BoilerSettings": {
+          "ControlType": "HeatSourceType_RelayControlled",
+          "FuelType": "Gas",
+          "CycleRate": "CPH_6",
+          "OnOffHysteresis": 5
+        },
+        "CoolingModeDefaultSetpoint": 210,
+        "CoolingAwayModeSetpointLimit": 300,
+        "ComfortModeEnabled": false,
+        "PreheatTimeLimit": 10800,
+        "DegradedModeSetpointThreshold": 180,
+        "GeoPosition": {
+          "Latitude": 30.4865,
+          "Longitude": 58.4892
+        },
+        "UfhOrphanModeOutput": "On",
+        "SummerComfortEnabled": false,
+        "IndoorDiscomfortTemperature": 250,
+        "OutdoorDiscomfortTemperature": 270,
+        "UnixTime": 1700508660,
+        "ActiveSystemVersion": "4.20.2-768e164",
+        "ZigbeePermitJoinActive": false,
+        "BrandName": "WiserHeat",
+        "LocalDateAndTime": {
+          "Year": 2023,
+          "Month": "November",
+          "Date": 20,
+          "Day": "Monday",
+          "Time": 2031
+        },
+        "HeatingButtonOverrideState": "Off",
+        "HotWaterButtonOverrideState": "Off",
+        "OpenThermConnectionStatus": "Disconnected",
+        "SunriseTimes": [
+          724,
+          726,
+          727,
+          729,
+          730,
+          732,
+          733,
+          735,
+          736,
+          738,
+          739,
+          740,
+          742
+        ],
+        "SunsetTimes": [
+          1643,
+          1642,
+          1641,
+          1640,
+          1639,
+          1638,
+          1637,
+          1636,
+          1635,
+          1634,
+          1633,
+          1632,
+          1632
+        ],
+        "isTrialist": false,
+        "isProvisioned": true,
+        "HardwareGeneration": 2,
+        "SummerDiscomfortPrevention": false,
+        "SummerComfortAvailable": false,
+        "CloudConnectionStatus": "Connected"
+      },
+      "Equipment": [
+        {
+          "id": 5,
+          "DeviceApplicationInstanceType": "PTE",
+          "DeviceApplicationInstanceId": 5,
+          "UUID": "131dd2db-d089-4a70-b6e4-16c1e04ee9d3",
+          "Controllable": false,
+          "CloudManaged": false,
+          "NumberOfPhases": "Three",
+          "Configured": "Configured",
+          "SelfConsumption": false,
+          "InstallationType": "Bidirectional",
+          "EnergyExport": "Unable",
+          "EquipmentFamily": "GRID",
+          "Direction": "Reverse",
+          "GridLimit": 60,
+          "GridLimitUom": "A",
+          "IconId": 1,
+          "OperatingStatus": "NormalOperation",
+          "FaultStatus": "NoFault",
+          "CurrentSummationDelivered": 714301,
+          "CurrentSummationReceived": 0,
+          "TotalActivePower": 27,
+          "RMSCurrent": 0,
+          "RMSCurrentPhB": 0,
+          "RMSCurrentPhC": 0,
+          "PcmMode": false
+        },
+        {
+          "id": 6,
+          "DeviceApplicationInstanceType": "PTE",
+          "DeviceApplicationInstanceId": 6,
+          "UUID": "18abb175-9c4d-4554-b60b-bb92531afb7f",
+          "Controllable": false,
+          "CloudManaged": false,
+          "NumberOfPhases": "Three",
+          "Configured": "Configured",
+          "SelfConsumption": false,
+          "InstallationType": "Mono",
+          "EquipmentName": "Herd und Ofen",
+          "EquipmentFamily": "Cooktop",
+          "IconId": 10,
+          "OperatingStatus": "NormalOperation",
+          "FaultStatus": "NoFault",
+          "CurrentSummationDelivered": 40999,
+          "CurrentSummationReceived": 0,
+          "TotalActivePower": 0,
+          "RMSCurrent": 0,
+          "RMSCurrentPhB": 0,
+          "RMSCurrentPhC": 0,
+          "PcmMode": false
+        },
+        {
+          "id": 7,
+          "DeviceApplicationInstanceType": "PTE",
+          "DeviceApplicationInstanceId": 8,
+          "UUID": "6f0723a2-ab46-48ae-b50b-e70450071963",
+          "Controllable": false,
+          "CloudManaged": false,
+          "NumberOfPhases": "One",
+          "Configured": "Configured",
+          "SelfConsumption": false,
+          "InstallationType": "Mono",
+          "EquipmentName": "Garage",
+          "EquipmentFamily": "ElectricalVehicle",
+          "IconId": 19,
+          "OperatingStatus": "NormalOperation",
+          "FaultStatus": "NoFault",
+          "CurrentSummationDelivered": 696,
+          "CurrentSummationReceived": 0,
+          "TotalActivePower": 0,
+          "ActivePower": 0,
+          "RMSCurrent": 0,
+          "RMSVoltage": 239,
+          "PcmMode": false
+        },
+        {
+          "id": 8,
+          "DeviceApplicationInstanceType": "PTE",
+          "DeviceApplicationInstanceId": 9,
+          "UUID": "caab5856-65e5-4f79-87de-8ec6c66544d0",
+          "Controllable": false,
+          "CloudManaged": false,
+          "NumberOfPhases": "One",
+          "Configured": "Configured",
+          "SelfConsumption": false,
+          "InstallationType": "Mono",
+          "EquipmentName": "Modem und Router",
+          "EquipmentFamily": "ElectricalPlug",
+          "IconId": 5,
+          "OperatingStatus": "NormalOperation",
+          "FaultStatus": "NoFault",
+          "CurrentSummationDelivered": 1124,
+          "CurrentSummationReceived": 0,
+          "TotalActivePower": 10,
+          "ActivePower": 10,
+          "RMSCurrent": 0,
+          "RMSVoltage": 239,
+          "PcmMode": false
+        },
+        {
+          "id": 9,
+          "DeviceApplicationInstanceType": "PTE",
+          "DeviceApplicationInstanceId": 10,
+          "UUID": "66dc4dd7-4218-487c-bbee-800c6df0f9ad",
+          "Controllable": false,
+          "CloudManaged": false,
+          "NumberOfPhases": "Three",
+          "Configured": "Configured",
+          "SelfConsumption": false,
+          "InstallationType": "Mono",
+          "EquipmentName": "Durchlauferhitzer",
+          "EquipmentFamily": "WaterHeater",
+          "IconId": 8,
+          "OperatingStatus": "NormalOperation",
+          "FaultStatus": "NoFault",
+          "CurrentSummationDelivered": 174990,
+          "CurrentSummationReceived": 0,
+          "TotalActivePower": 0,
+          "RMSCurrent": 0,
+          "RMSCurrentPhB": 0,
+          "RMSCurrentPhC": 0,
+          "PcmMode": false
+        }
+      ]
+    },
+    "Network": {
+      "AccessPoint": {
+        "Enabled": false,
+        "KeepEnabledAfterRestart": false,
+        "SSID": "ANON_SSID",
+        "Channel": 6,
+        "SecurityMode": "WPA_WPA2_PSK",
+        "MacAddress": "ANON_MAC",
+        "NetworkInterface": {
+          "InterfaceName": "wlan1",
+          "HostName": "WiserHeatXXXXXX",
+          "DhcpMode": "Server",
+          "IPv4HostAddress": "ANON_IP",
+          "IPv4SubnetMask": "255.255.255.0",
+          "IPv4DefaultGateway": "ANON_IP",
+          "IPv4PrimaryDNS": "ANON_IP",
+          "IPv4SecondaryDNS": "ANON_IP"
+        }
+      },
+      "Station": {
+        "Enabled": true,
+        "SSID": "ANON_SSID",
+        "SecurityMode": "WPA_WPA2_PSK",
+        "NetworkInterface": {
+          "InterfaceName": "wlan0",
+          "HostName": "WiserHeatXXXXXX",
+          "DhcpMode": "Client"
+        },
+        "ConnectionStatus": "Connected",
+        "DhcpStatus": {
+          "Status": "INIT"
+        },
+        "Scanning": false,
+        "DetectedAccessPoints": [
+          {
+            "SSID": "ANON_SSID",
+            "Channel": 1,
+            "SecurityMode": "WPA_WPA2_PSK",
+            "RSSI": -64
+          },
+          {
+            "SSID": "ANON_SSID",
+            "Channel": 1,
+            "SecurityMode": "WPA_WPA2_PSK",
+            "RSSI": -70
+          },
+          {
+            "SSID": "ANON_SSID",
+            "Channel": 6,
+            "SecurityMode": "WPA_WPA2_PSK",
+            "RSSI": -84
+          },
+          {
+            "SSID": "ANON_SSID",
+            "Channel": 6,
+            "SecurityMode": "WPA_WPA2_PSK",
+            "RSSI": -88
+          },
+          {
+            "SSID": "ANON_SSID",
+            "Channel": 13,
+            "SecurityMode": "WPA_WPA2_PSK",
+            "RSSI": -46
+          }
+        ],
+        "ConnectionFailures": 0,
+        "MacAddress": "ANON_MAC",
+        "RSSI": {
+          "Current": -46,
+          "Min": -50,
+          "Max": -42
+        },
+        "Channel": 255
+      }
+    },
+    "Schedule": {
+      "OnOff": [
+        {
+          "id": 1000,
+          "Name": "Hot Water",
+          "Monday": [
+            630,
+            -830,
+            1630,
+            -2230
+          ],
+          "Tuesday": [
+            630,
+            -830,
+            1630,
+            -2230
+          ],
+          "Wednesday": [
+            630,
+            -830,
+            1630,
+            -2230
+          ],
+          "Thursday": [
+            630,
+            -830,
+            1630,
+            -2230
+          ],
+          "Friday": [
+            630,
+            -830,
+            1630,
+            -2230
+          ],
+          "Saturday": [
+            630,
+            -830,
+            1630,
+            -2230
+          ],
+          "Sunday": [
+            630,
+            -830,
+            1630,
+            -2230
+          ],
+          "CurrentState": "On",
+          "Next": {
+            "Day": "Monday",
+            "Time": 2230,
+            "State": "Off"
+          }
+        }
+      ]
+    },
+    "OpenTherm": {}
+  }
+}
