@@ -1,0 +1,939 @@
+{
+  "home_assistant": {
+    "installation_type": "Home Assistant OS",
+    "version": "2023.11.2",
+    "dev": false,
+    "hassio": true,
+    "virtualenv": false,
+    "python_version": "3.11.6",
+    "docker": true,
+    "arch": "aarch64",
+    "timezone": "Europe/Berlin",
+    "os_name": "Linux",
+    "os_version": "6.1.21-v8",
+    "supervisor": "2023.11.3",
+    "host_os": "Home Assistant OS 11.1",
+    "docker_version": "24.0.6",
+    "chassis": "embedded",
+    "run_as_root": true
+  },
+  "custom_components": {
+    "hacs": {
+      "version": "1.33.0",
+      "requirements": [
+        "aiogithubapi>=22.10.1"
+      ]
+    },
+    "dreame_vacuum": {
+      "version": "v2.0.0b6",
+      "requirements": [
+        "pillow",
+        "numpy",
+        "pybase64",
+        "requests",
+        "pycryptodome",
+        "python-miio",
+        "py-mini-racer",
+        "tzlocal"
+      ]
+    },
+    "wiser": {
+      "version": "3.4.0",
+      "requirements": [
+        "aioWiserHeatAPI==1.4.0"
+      ]
+    },
+    "o365": {
+      "version": "v4.4.4",
+      "requirements": [
+        "O365==2.0.28",
+        "BeautifulSoup4>=4.10.0"
+      ]
+    },
+    "waste_collection_schedule": {
+      "version": "1.43.0",
+      "requirements": [
+        "icalendar",
+        "recurring_ical_events",
+        "icalevents",
+        "bs4",
+        "lxml"
+      ]
+    },
+    "ring_martinpham": {
+      "version": "0.0.1",
+      "requirements": []
+    }
+  },
+  "integration_manifest": {
+    "domain": "zha",
+    "name": "Zigbee Home Automation",
+    "after_dependencies": [
+      "onboarding",
+      "usb"
+    ],
+    "codeowners": [
+      "@dmulcahey",
+      "@adminiuga",
+      "@puddly"
+    ],
+    "config_flow": true,
+    "dependencies": [
+      "file_upload"
+    ],
+    "documentation": "https://www.home-assistant.io/integrations/zha",
+    "iot_class": "local_polling",
+    "loggers": [
+      "aiosqlite",
+      "bellows",
+      "crccheck",
+      "pure_pcapy3",
+      "zhaquirks",
+      "zigpy",
+      "zigpy_deconz",
+      "zigpy_xbee",
+      "zigpy_zigate",
+      "zigpy_znp",
+      "universal_silabs_flasher"
+    ],
+    "requirements": [
+      "bellows==0.36.8",
+      "pyserial==3.5",
+      "pyserial-asyncio==0.6",
+      "zha-quirks==0.0.106",
+      "zigpy-deconz==0.21.1",
+      "zigpy==0.59.0",
+      "zigpy-xbee==0.19.0",
+      "zigpy-zigate==0.11.0",
+      "zigpy-znp==0.11.6",
+      "universal-silabs-flasher==0.0.14",
+      "pyserial-asyncio-fast==0.11"
+    ],
+    "usb": [
+      {
+        "vid": "10C4",
+        "pid": "EA60",
+        "description": "*2652*",
+        "known_devices": [
+          "slae.sh cc2652rb stick"
+        ]
+      },
+      {
+        "vid": "1A86",
+        "pid": "55D4",
+        "description": "*sonoff*plus*",
+        "known_devices": [
+          "sonoff zigbee dongle plus v2"
+        ]
+      },
+      {
+        "vid": "10C4",
+        "pid": "EA60",
+        "description": "*sonoff*plus*",
+        "known_devices": [
+          "sonoff zigbee dongle plus"
+        ]
+      },
+      {
+        "vid": "10C4",
+        "pid": "EA60",
+        "description": "*tubeszb*",
+        "known_devices": [
+          "TubesZB Coordinator"
+        ]
+      },
+      {
+        "vid": "1A86",
+        "pid": "7523",
+        "description": "*tubeszb*",
+        "known_devices": [
+          "TubesZB Coordinator"
+        ]
+      },
+      {
+        "vid": "1A86",
+        "pid": "7523",
+        "description": "*zigstar*",
+        "known_devices": [
+          "ZigStar Coordinators"
+        ]
+      },
+      {
+        "vid": "1CF1",
+        "pid": "0030",
+        "description": "*conbee*",
+        "known_devices": [
+          "Conbee II"
+        ]
+      },
+      {
+        "vid": "10C4",
+        "pid": "8A2A",
+        "description": "*zigbee*",
+        "known_devices": [
+          "Nortek HUSBZB-1"
+        ]
+      },
+      {
+        "vid": "0403",
+        "pid": "6015",
+        "description": "*zigate*",
+        "known_devices": [
+          "ZiGate+"
+        ]
+      },
+      {
+        "vid": "10C4",
+        "pid": "EA60",
+        "description": "*zigate*",
+        "known_devices": [
+          "ZiGate"
+        ]
+      },
+      {
+        "vid": "10C4",
+        "pid": "8B34",
+        "description": "*bv 2010/10*",
+        "known_devices": [
+          "Bitron Video AV2010/10"
+        ]
+      }
+    ],
+    "zeroconf": [
+      {
+        "type": "_esphomelib._tcp.local.",
+        "name": "tube*"
+      },
+      {
+        "type": "_zigate-zigbee-gateway._tcp.local.",
+        "name": "*zigate*"
+      },
+      {
+        "type": "_zigstar_gw._tcp.local.",
+        "name": "*zigstar*"
+      },
+      {
+        "type": "_uzg-01._tcp.local.",
+        "name": "uzg-01*"
+      },
+      {
+        "type": "_slzb-06._tcp.local.",
+        "name": "slzb-06*"
+      }
+    ],
+    "is_built_in": true
+  },
+  "data": {
+    "ieee": "**REDACTED**",
+    "nwk": 40292,
+    "manufacturer": "Schneider Electric",
+    "model": "SOCKET/OUTLET/1",
+    "name": "Schneider Electric SOCKET/OUTLET/1",
+    "quirk_applied": false,
+    "quirk_class": "zigpy.device.Device",
+    "quirk_id": null,
+    "manufacturer_code": 4190,
+    "power_source": "Mains",
+    "lqi": 220,
+    "rssi": -45,
+    "last_seen": "2023-11-20T20:47:47",
+    "available": true,
+    "device_type": "Router",
+    "signature": {
+      "node_descriptor": "NodeDescriptor(logical_type=<LogicalType.Router: 1>, complex_descriptor_available=0, user_descriptor_available=0, reserved=0, aps_flags=0, frequency_band=<FrequencyBand.Freq2400MHz: 8>, mac_capability_flags=<MACCapabilityFlags.FullFunctionDevice|MainsPowered|RxOnWhenIdle|AllocateAddress: 142>, manufacturer_code=4190, maximum_buffer_size=82, maximum_incoming_transfer_size=82, server_mask=11264, maximum_outgoing_transfer_size=82, descriptor_capability_field=<DescriptorCapability.NONE: 0>, *allocate_address=True, *is_alternate_pan_coordinator=False, *is_coordinator=False, *is_end_device=False, *is_full_function_device=True, *is_mains_powered=True, *is_receiver_on_when_idle=True, *is_router=True, *is_security_capable=False)",
+      "endpoints": {
+        "6": {
+          "profile_id": "0x0104",
+          "device_type": "0x0009",
+          "input_clusters": [
+            "0x0000",
+            "0x0003",
+            "0x0004",
+            "0x0005",
+            "0x0006",
+            "0x0702",
+            "0x0708",
+            "0x0b04",
+            "0x0b05",
+            "0xfc04"
+          ],
+          "output_clusters": [
+            "0x0019"
+          ]
+        },
+        "242": {
+          "profile_id": "0xa1e0",
+          "device_type": "0x0061",
+          "input_clusters": [],
+          "output_clusters": [
+            "0x0021"
+          ]
+        }
+      },
+      "manufacturer": "Schneider Electric",
+      "model": "SOCKET/OUTLET/1"
+    },
+    "active_coordinator": false,
+    "entities": [
+      {
+        "entity_id": "sensor.steckdose_kaffeemaschine_power",
+        "name": "Schneider Electric SOCKET/OUTLET/1"
+      },
+      {
+        "entity_id": "sensor.steckdose_kaffeemaschine_energy",
+        "name": "Schneider Electric SOCKET/OUTLET/1"
+      },
+      {
+        "entity_id": "switch.steckdose_kaffeemaschine",
+        "name": "Schneider Electric SOCKET/OUTLET/1"
+      }
+    ],
+    "neighbors": [
+      {
+        "device_type": "Coordinator",
+        "rx_on_when_idle": "On",
+        "relationship": "Sibling",
+        "extended_pan_id": "**REDACTED**",
+        "ieee": "**REDACTED**",
+        "nwk": "0x0000",
+        "permit_joining": "Unknown",
+        "depth": "0",
+        "lqi": "232"
+      },
+      {
+        "device_type": "Router",
+        "rx_on_when_idle": "On",
+        "relationship": "Sibling",
+        "extended_pan_id": "**REDACTED**",
+        "ieee": "**REDACTED**",
+        "nwk": "0x0834",
+        "permit_joining": "Unknown",
+        "depth": "15",
+        "lqi": "179"
+      },
+      {
+        "device_type": "Router",
+        "rx_on_when_idle": "On",
+        "relationship": "Sibling",
+        "extended_pan_id": "**REDACTED**",
+        "ieee": "**REDACTED**",
+        "nwk": "0x0947",
+        "permit_joining": "Unknown",
+        "depth": "15",
+        "lqi": "104"
+      },
+      {
+        "device_type": "Router",
+        "rx_on_when_idle": "On",
+        "relationship": "Parent",
+        "extended_pan_id": "**REDACTED**",
+        "ieee": "**REDACTED**",
+        "nwk": "0x17A3",
+        "permit_joining": "Unknown",
+        "depth": "15",
+        "lqi": "208"
+      },
+      {
+        "device_type": "Router",
+        "rx_on_when_idle": "On",
+        "relationship": "Sibling",
+        "extended_pan_id": "**REDACTED**",
+        "ieee": "**REDACTED**",
+        "nwk": "0x259B",
+        "permit_joining": "Unknown",
+        "depth": "15",
+        "lqi": "76"
+      },
+      {
+        "device_type": "Router",
+        "rx_on_when_idle": "On",
+        "relationship": "Sibling",
+        "extended_pan_id": "**REDACTED**",
+        "ieee": "**REDACTED**",
+        "nwk": "0x2B0C",
+        "permit_joining": "Unknown",
+        "depth": "15",
+        "lqi": "36"
+      },
+      {
+        "device_type": "Router",
+        "rx_on_when_idle": "On",
+        "relationship": "Sibling",
+        "extended_pan_id": "**REDACTED**",
+        "ieee": "**REDACTED**",
+        "nwk": "0x3ED0",
+        "permit_joining": "Unknown",
+        "depth": "15",
+        "lqi": "138"
+      },
+      {
+        "device_type": "Router",
+        "rx_on_when_idle": "On",
+        "relationship": "Sibling",
+        "extended_pan_id": "**REDACTED**",
+        "ieee": "**REDACTED**",
+        "nwk": "0x5459",
+        "permit_joining": "Unknown",
+        "depth": "15",
+        "lqi": "208"
+      },
+      {
+        "device_type": "Router",
+        "rx_on_when_idle": "On",
+        "relationship": "Sibling",
+        "extended_pan_id": "**REDACTED**",
+        "ieee": "**REDACTED**",
+        "nwk": "0x58A5",
+        "permit_joining": "Unknown",
+        "depth": "15",
+        "lqi": "98"
+      },
+      {
+        "device_type": "Router",
+        "rx_on_when_idle": "On",
+        "relationship": "Sibling",
+        "extended_pan_id": "**REDACTED**",
+        "ieee": "**REDACTED**",
+        "nwk": "0x5AF5",
+        "permit_joining": "Unknown",
+        "depth": "15",
+        "lqi": "101"
+      },
+      {
+        "device_type": "Router",
+        "rx_on_when_idle": "On",
+        "relationship": "Sibling",
+        "extended_pan_id": "**REDACTED**",
+        "ieee": "**REDACTED**",
+        "nwk": "0x7180",
+        "permit_joining": "Unknown",
+        "depth": "15",
+        "lqi": "184"
+      },
+      {
+        "device_type": "Router",
+        "rx_on_when_idle": "On",
+        "relationship": "Sibling",
+        "extended_pan_id": "**REDACTED**",
+        "ieee": "**REDACTED**",
+        "nwk": "0xA0F2",
+        "permit_joining": "Unknown",
+        "depth": "15",
+        "lqi": "64"
+      },
+      {
+        "device_type": "Router",
+        "rx_on_when_idle": "On",
+        "relationship": "Sibling",
+        "extended_pan_id": "**REDACTED**",
+        "ieee": "**REDACTED**",
+        "nwk": "0xA5F8",
+        "permit_joining": "Unknown",
+        "depth": "15",
+        "lqi": "152"
+      },
+      {
+        "device_type": "Router",
+        "rx_on_when_idle": "On",
+        "relationship": "Sibling",
+        "extended_pan_id": "**REDACTED**",
+        "ieee": "**REDACTED**",
+        "nwk": "0xAC8B",
+        "permit_joining": "Unknown",
+        "depth": "15",
+        "lqi": "112"
+      },
+      {
+        "device_type": "Router",
+        "rx_on_when_idle": "On",
+        "relationship": "Sibling",
+        "extended_pan_id": "**REDACTED**",
+        "ieee": "**REDACTED**",
+        "nwk": "0xB194",
+        "permit_joining": "Unknown",
+        "depth": "15",
+        "lqi": "224"
+      },
+      {
+        "device_type": "Router",
+        "rx_on_when_idle": "On",
+        "relationship": "Sibling",
+        "extended_pan_id": "**REDACTED**",
+        "ieee": "**REDACTED**",
+        "nwk": "0xB4EA",
+        "permit_joining": "Unknown",
+        "depth": "15",
+        "lqi": "144"
+      },
+      {
+        "device_type": "Router",
+        "rx_on_when_idle": "On",
+        "relationship": "Sibling",
+        "extended_pan_id": "**REDACTED**",
+        "ieee": "**REDACTED**",
+        "nwk": "0xB738",
+        "permit_joining": "Unknown",
+        "depth": "15",
+        "lqi": "120"
+      },
+      {
+        "device_type": "Router",
+        "rx_on_when_idle": "On",
+        "relationship": "Sibling",
+        "extended_pan_id": "**REDACTED**",
+        "ieee": "**REDACTED**",
+        "nwk": "0xC4B3",
+        "permit_joining": "Unknown",
+        "depth": "15",
+        "lqi": "224"
+      },
+      {
+        "device_type": "Router",
+        "rx_on_when_idle": "On",
+        "relationship": "Sibling",
+        "extended_pan_id": "**REDACTED**",
+        "ieee": "**REDACTED**",
+        "nwk": "0xD729",
+        "permit_joining": "Unknown",
+        "depth": "15",
+        "lqi": "92"
+      },
+      {
+        "device_type": "Router",
+        "rx_on_when_idle": "On",
+        "relationship": "Sibling",
+        "extended_pan_id": "**REDACTED**",
+        "ieee": "**REDACTED**",
+        "nwk": "0xD7C5",
+        "permit_joining": "Unknown",
+        "depth": "15",
+        "lqi": "200"
+      },
+      {
+        "device_type": "Router",
+        "rx_on_when_idle": "On",
+        "relationship": "Sibling",
+        "extended_pan_id": "**REDACTED**",
+        "ieee": "**REDACTED**",
+        "nwk": "0xDC70",
+        "permit_joining": "Unknown",
+        "depth": "15",
+        "lqi": "144"
+      },
+      {
+        "device_type": "Router",
+        "rx_on_when_idle": "On",
+        "relationship": "Sibling",
+        "extended_pan_id": "**REDACTED**",
+        "ieee": "**REDACTED**",
+        "nwk": "0xDE40",
+        "permit_joining": "Unknown",
+        "depth": "15",
+        "lqi": "123"
+      },
+      {
+        "device_type": "Router",
+        "rx_on_when_idle": "On",
+        "relationship": "Sibling",
+        "extended_pan_id": "**REDACTED**",
+        "ieee": "**REDACTED**",
+        "nwk": "0xE2CA",
+        "permit_joining": "Unknown",
+        "depth": "15",
+        "lqi": "61"
+      },
+      {
+        "device_type": "Router",
+        "rx_on_when_idle": "On",
+        "relationship": "Sibling",
+        "extended_pan_id": "**REDACTED**",
+        "ieee": "**REDACTED**",
+        "nwk": "0xEC49",
+        "permit_joining": "Unknown",
+        "depth": "15",
+        "lqi": "184"
+      },
+      {
+        "device_type": "Router",
+        "rx_on_when_idle": "On",
+        "relationship": "Sibling",
+        "extended_pan_id": "**REDACTED**",
+        "ieee": "**REDACTED**",
+        "nwk": "0xF529",
+        "permit_joining": "Unknown",
+        "depth": "15",
+        "lqi": "121"
+      },
+      {
+        "device_type": "Router",
+        "rx_on_when_idle": "On",
+        "relationship": "Sibling",
+        "extended_pan_id": "**REDACTED**",
+        "ieee": "**REDACTED**",
+        "nwk": "0xFC2E",
+        "permit_joining": "Unknown",
+        "depth": "15",
+        "lqi": "139"
+      }
+    ],
+    "routes": [
+      {
+        "dest_nwk": "0x0000",
+        "route_status": "Active",
+        "memory_constrained": false,
+        "many_to_one": false,
+        "route_record_required": false,
+        "next_hop": "0x0000"
+      },
+      {
+        "dest_nwk": "0x5AF5",
+        "route_status": "Active",
+        "memory_constrained": false,
+        "many_to_one": false,
+        "route_record_required": false,
+        "next_hop": "0x5AF5"
+      },
+      {
+        "dest_nwk": "0x7180",
+        "route_status": "Active",
+        "memory_constrained": false,
+        "many_to_one": false,
+        "route_record_required": false,
+        "next_hop": "0xD7C5"
+      },
+      {
+        "dest_nwk": "0x140C",
+        "route_status": "Active",
+        "memory_constrained": false,
+        "many_to_one": false,
+        "route_record_required": false,
+        "next_hop": "0xDE40"
+      },
+      {
+        "dest_nwk": "0x184B",
+        "route_status": "Active",
+        "memory_constrained": false,
+        "many_to_one": false,
+        "route_record_required": false,
+        "next_hop": "0x259B"
+      },
+      {
+        "dest_nwk": "0x2B0C",
+        "route_status": "Active",
+        "memory_constrained": false,
+        "many_to_one": false,
+        "route_record_required": false,
+        "next_hop": "0x0000"
+      },
+      {
+        "dest_nwk": "0xB4EA",
+        "route_status": "Active",
+        "memory_constrained": false,
+        "many_to_one": false,
+        "route_record_required": false,
+        "next_hop": "0x5459"
+      },
+      {
+        "dest_nwk": "0xD7C5",
+        "route_status": "Active",
+        "memory_constrained": false,
+        "many_to_one": false,
+        "route_record_required": false,
+        "next_hop": "0xD7C5"
+      },
+      {
+        "dest_nwk": "0x812F",
+        "route_status": "Active",
+        "memory_constrained": false,
+        "many_to_one": false,
+        "route_record_required": false,
+        "next_hop": "0xB194"
+      },
+      {
+        "dest_nwk": "0x5459",
+        "route_status": "Active",
+        "memory_constrained": false,
+        "many_to_one": false,
+        "route_record_required": false,
+        "next_hop": "0x5459"
+      },
+      {
+        "dest_nwk": "0x17A3",
+        "route_status": "Active",
+        "memory_constrained": false,
+        "many_to_one": false,
+        "route_record_required": false,
+        "next_hop": "0xB194"
+      },
+      {
+        "dest_nwk": "0x769D",
+        "route_status": "Active",
+        "memory_constrained": false,
+        "many_to_one": false,
+        "route_record_required": false,
+        "next_hop": "0xFC2E"
+      },
+      {
+        "dest_nwk": "0x121B",
+        "route_status": "Active",
+        "memory_constrained": false,
+        "many_to_one": false,
+        "route_record_required": false,
+        "next_hop": "0xC4B3"
+      },
+      {
+        "dest_nwk": "0x0947",
+        "route_status": "Active",
+        "memory_constrained": false,
+        "many_to_one": false,
+        "route_record_required": false,
+        "next_hop": "0x0947"
+      }
+    ],
+    "endpoint_names": [
+      {
+        "name": "MAIN_POWER_OUTLET"
+      },
+      {
+        "name": "PROXY_BASIC"
+      }
+    ],
+    "user_given_name": "Steckdose.Kaffeemaschine",
+    "device_reg_id": "6073786e19334b649fc921cef24cee7d",
+    "area_id": "kuche",
+    "cluster_details": {
+      "6": {
+        "device_type": {
+          "name": "MAIN_POWER_OUTLET",
+          "id": 9
+        },
+        "profile_id": 260,
+        "in_clusters": {
+          "0x0000": {
+            "endpoint_attribute": "basic",
+            "attributes": {
+              "0x0004": {
+                "attribute_name": "manufacturer",
+                "value": "Schneider Electric"
+              },
+              "0x0005": {
+                "attribute_name": "model",
+                "value": "SOCKET/OUTLET/1"
+              }
+            },
+            "unsupported_attributes": {}
+          },
+          "0x0003": {
+            "endpoint_attribute": "identify",
+            "attributes": {},
+            "unsupported_attributes": {}
+          },
+          "0x0004": {
+            "endpoint_attribute": "groups",
+            "attributes": {},
+            "unsupported_attributes": {}
+          },
+          "0x0005": {
+            "endpoint_attribute": "scenes",
+            "attributes": {},
+            "unsupported_attributes": {}
+          },
+          "0x0006": {
+            "endpoint_attribute": "on_off",
+            "attributes": {
+              "0x0000": {
+                "attribute_name": "on_off",
+                "value": 0
+              },
+              "0x4003": {
+                "attribute_name": "start_up_on_off",
+                "value": 255
+              }
+            },
+            "unsupported_attributes": {}
+          },
+          "0x0702": {
+            "endpoint_attribute": "smartenergy_metering",
+            "attributes": {
+              "0x0000": {
+                "attribute_name": "current_summ_delivered",
+                "value": 158
+              },
+              "0x0302": {
+                "attribute_name": "divisor",
+                "value": 1000
+              },
+              "0x0204": {
+                "attribute_name": "extended_status",
+                "value": 0
+              },
+              "0x0207": {
+                "attribute_name": "iambient_consumption_indicator",
+                "value": 0
+              },
+              "0x0400": {
+                "attribute_name": "instantaneous_demand",
+                "value": 0
+              },
+              "0x0306": {
+                "attribute_name": "metering_device_type",
+                "value": 0
+              },
+              "0x0301": {
+                "attribute_name": "multiplier",
+                "value": 1
+              },
+              "0x0200": {
+                "attribute_name": "status",
+                "value": 0
+              },
+              "0x0303": {
+                "attribute_name": "summation_formatting",
+                "value": 75
+              },
+              "0x0300": {
+                "attribute_name": "unit_of_measure",
+                "value": 0
+              }
+            },
+            "unsupported_attributes": {
+              "0x0100": {
+                "attribute_name": "current_tier1_summ_delivered"
+              },
+              "0x0108": {
+                "attribute_name": "current_tier5_summ_delivered"
+              },
+              "0x0102": {
+                "attribute_name": "current_tier2_summ_delivered"
+              },
+              "0x0104": {
+                "attribute_name": "current_tier3_summ_delivered"
+              },
+              "0x0304": {
+                "attribute_name": "demand_formatting"
+              },
+              "0x0106": {
+                "attribute_name": "current_tier4_summ_delivered"
+              },
+              "0x010a": {
+                "attribute_name": "current_tier6_summ_delivered"
+              }
+            }
+          },
+          "0x0708": {
+            "endpoint_attribute": "smartenergy_device_management",
+            "attributes": {},
+            "unsupported_attributes": {}
+          },
+          "0x0b04": {
+            "endpoint_attribute": "electrical_measurement",
+            "attributes": {
+              "0x0603": {
+                "attribute_name": "ac_current_divisor",
+                "value": 1000
+              },
+              "0x0602": {
+                "attribute_name": "ac_current_multiplier",
+                "value": 1
+              },
+              "0x0000": {
+                "attribute_name": "measurement_type",
+                "value": 8
+              },
+              "0x0508": {
+                "attribute_name": "rms_current",
+                "value": 0
+              },
+              "0x0505": {
+                "attribute_name": "rms_voltage",
+                "value": 236
+              }
+            },
+            "unsupported_attributes": {
+              "0x0300": {
+                "attribute_name": "ac_frequency"
+              },
+              "0x0601": {
+                "attribute_name": "ac_voltage_divisor"
+              },
+              "0x0302": {
+                "attribute_name": "ac_frequency_max"
+              },
+              "0x0600": {
+                "attribute_name": "ac_voltage_multiplier"
+              },
+              "0x0604": {
+                "attribute_name": "ac_power_multiplier"
+              },
+              "0x0605": {
+                "attribute_name": "ac_power_divisor"
+              },
+              "0x0401": {
+                "attribute_name": "ac_frequency_divisor"
+              },
+              "0x0507": {
+                "attribute_name": "rms_voltage_max"
+              },
+              "0x0400": {
+                "attribute_name": "ac_frequency_multiplier"
+              },
+              "0x0403": {
+                "attribute_name": "power_divisor"
+              },
+              "0x050a": {
+                "attribute_name": "rms_current_max"
+              },
+              "0x050b": {
+                "attribute_name": "active_power"
+              },
+              "0x050d": {
+                "attribute_name": "active_power_max"
+              },
+              "0x050f": {
+                "attribute_name": "apparent_power"
+              },
+              "0x0510": {
+                "attribute_name": "power_factor"
+              },
+              "0x0402": {
+                "attribute_name": "power_multiplier"
+              }
+            }
+          },
+          "0x0b05": {
+            "endpoint_attribute": "diagnostic",
+            "attributes": {},
+            "unsupported_attributes": {}
+          },
+          "0xfc04": {
+            "endpoint_attribute": "manufacturer_specific",
+            "attributes": {},
+            "unsupported_attributes": {}
+          }
+        },
+        "out_clusters": {
+          "0x0019": {
+            "endpoint_attribute": "ota",
+            "attributes": {},
+            "unsupported_attributes": {}
+          }
+        }
+      },
+      "242": {
+        "device_type": {
+          "name": "PROXY_BASIC",
+          "id": 97
+        },
+        "profile_id": 41440,
+        "in_clusters": {},
+        "out_clusters": {
+          "0x0021": {
+            "endpoint_attribute": "green_power",
+            "attributes": {},
+            "unsupported_attributes": {}
+          }
+        }
+      }
+    }
+  }
+}
