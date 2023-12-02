@@ -11,7 +11,7 @@
     "timezone": "Europe/Berlin",
     "os_name": "Linux",
     "os_version": "6.1.21-v8",
-    "supervisor": "2023.11.3",
+    "supervisor": "2023.11.6",
     "host_os": "Home Assistant OS 11.1",
     "docker_version": "24.0.6",
     "chassis": "embedded",
@@ -24,29 +24,11 @@
         "aiogithubapi>=22.10.1"
       ]
     },
-    "dreame_vacuum": {
-      "version": "v1.0.2",
-      "requirements": [
-        "pillow",
-        "numpy",
-        "pybase64",
-        "requests",
-        "pycryptodome",
-        "python-miio",
-        "py-mini-racer",
-        "tzlocal",
-        "paho-mqtt"
-      ]
-    },
     "wiser": {
       "version": "3.4.0",
       "requirements": [
         "aioWiserHeatAPI==1.4.0"
       ]
-    },
-    "dwains_dashboard": {
-      "version": "3.6.0",
-      "requirements": []
     },
     "o365": {
       "version": "v4.4.4",
@@ -64,10 +46,6 @@
         "bs4",
         "lxml"
       ]
-    },
-    "localtuya": {
-      "version": "6.1.0",
-      "requirements": []
     },
     "ring_martinpham": {
       "version": "0.0.1",
@@ -362,7 +340,7 @@
           "DeviceLockEnabled": false,
           "DisplayedSignalStrength": "VeryGood",
           "ReceptionOfController": {
-            "Rssi": -44
+            "Rssi": -40
           }
         },
         {
@@ -381,7 +359,7 @@
           "DeviceLockEnabled": false,
           "DisplayedSignalStrength": "VeryGood",
           "ReceptionOfController": {
-            "Rssi": -48,
+            "Rssi": -49,
             "Lqi": 255
           },
           "BindingsStatus": "SetCorrectly",
@@ -405,7 +383,7 @@
           "DeviceLockEnabled": false,
           "DisplayedSignalStrength": "VeryGood",
           "ReceptionOfController": {
-            "Rssi": -43,
+            "Rssi": -44,
             "Lqi": 255
           },
           "BindingsStatus": "SetCorrectly",
@@ -429,7 +407,7 @@
           "DeviceLockEnabled": false,
           "DisplayedSignalStrength": "VeryGood",
           "ReceptionOfController": {
-            "Rssi": -86,
+            "Rssi": -82,
             "Lqi": 255
           },
           "BindingsStatus": "SetCorrectly",
@@ -453,7 +431,7 @@
           "DeviceLockEnabled": false,
           "DisplayedSignalStrength": "VeryGood",
           "ReceptionOfController": {
-            "Rssi": -57,
+            "Rssi": -51,
             "Lqi": 255
           },
           "BindingsStatus": "SetCorrectly",
@@ -477,7 +455,7 @@
           "DeviceLockEnabled": false,
           "DisplayedSignalStrength": "VeryGood",
           "ReceptionOfController": {
-            "Rssi": -43,
+            "Rssi": -41,
             "Lqi": 255
           },
           "BindingsStatus": "SetCorrectly",
@@ -616,7 +594,7 @@
         },
         {
           "id": 17,
-          "NodeId": 44789,
+          "NodeId": 25517,
           "ProductType": "SmartPlug",
           "ProductIdentifier": "SmartSocket",
           "ActiveFirmwareVersion": "2.9.1",
@@ -629,7 +607,7 @@
           "OtaHardwareVersion": 256,
           "Type": "ZigbeeDevice",
           "UUID": "6d7a0bfa-5a9a-5161-957f-42e6ddcba66d",
-          "DeviceLockEnabled": false,
+          "DeviceLockEnabled": true,
           "DisplayedSignalStrength": "Online",
           "PendingZigbeeMessageMask": 0,
           "BindingsStatus": "SetCorrectly",
@@ -757,9 +735,61 @@
           "OtaVersion": 34,
           "Type": "ZigbeeDevice",
           "UUID": "af3b8b37-684c-55b3-8cb7-6e99f094c3ac",
-          "DeviceLockEnabled": false,
+          "DeviceLockEnabled": true,
           "DisplayedSignalStrength": "Online",
           "PendingZigbeeMessageMask": 0,
+          "BindingsStatus": "SetCorrectly",
+          "ReportConfigStatus": "SetCorrectly",
+          "AttributesStatus": "SetCorrectly"
+        },
+        {
+          "id": 25,
+          "NodeId": 6531,
+          "ProductType": "OnOffLight",
+          "ProductIdentifier": "C4BLight",
+          "ActiveFirmwareVersion": "2.10.1",
+          "ModelIdentifier": "Unknown",
+          "SerialNumber": "ANON_SERIAL",
+          "ProductModel": "1GANG/SWITCH/1",
+          "OtaImageQueryCount": 0,
+          "LastOtaImageQueryCount": 0,
+          "OtaVersion": 34210303,
+          "OtaHardwareVersion": 512,
+          "Type": "ZigbeeDevice",
+          "UUID": "834c8784-08ec-59a7-9c94-d156dd332436",
+          "DeviceLockEnabled": false,
+          "DisplayedSignalStrength": "Good",
+          "ReceptionOfController": {
+            "Rssi": -64,
+            "Lqi": 144
+          },
+          "PendingZigbeeMessageMask": 0,
+          "BindingsStatus": "SetCorrectly",
+          "ReportConfigStatus": "SetCorrectly",
+          "AttributesStatus": "SetCorrectly"
+        },
+        {
+          "id": 29,
+          "NodeId": 21920,
+          "ProductType": "SmokeAlarmDevice",
+          "ProductIdentifier": "SmokeAlarmDCSquare",
+          "ActiveFirmwareVersion": "2.7.6",
+          "ModelIdentifier": "Unknown",
+          "SerialNumber": "ANON_SERIAL",
+          "ProductModel": "Wiser Smoke Alarm",
+          "OtaImageQueryCount": 0,
+          "LastOtaImageQueryCount": 4,
+          "OtaVersion": 34014975,
+          "OtaHardwareVersion": 0,
+          "Type": "ZigbeeDevice",
+          "UUID": "68750957-e02f-5f74-9472-acd370614f0c",
+          "Name": "Keller",
+          "DeviceLockEnabled": false,
+          "RoomId": 5,
+          "DisplayedSignalStrength": "Online",
+          "BatteryLevel": "Normal",
+          "PendingZigbeeMessageMask": 0,
+          "OtaLastImageSentBytes": 193926,
           "BindingsStatus": "SetCorrectly",
           "ReportConfigStatus": "SetCorrectly",
           "AttributesStatus": "SetCorrectly"
@@ -926,7 +956,7 @@
           "RoomId": 3,
           "OutputState": "Off",
           "ControlSource": "FromManualMode",
-          "CurrentSummationDelivered": 0,
+          "CurrentSummationDelivered": 1576,
           "InstantaneousDemand": 0,
           "TargetState": "Off",
           "EquipmentData": {
@@ -946,7 +976,7 @@
             "IconId": 3,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 0,
+            "CurrentSummationDelivered": 1576,
             "TotalActivePower": 0,
             "ActivePower": 0,
             "PcmMode": false
@@ -964,7 +994,7 @@
           "RoomId": 3,
           "OutputState": "Off",
           "ControlSource": "FromManualMode",
-          "CurrentSummationDelivered": 0,
+          "CurrentSummationDelivered": 105,
           "InstantaneousDemand": 0,
           "TargetState": "Off",
           "EquipmentData": {
@@ -984,7 +1014,7 @@
             "IconId": 8,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 0,
+            "CurrentSummationDelivered": 105,
             "TotalActivePower": 0,
             "ActivePower": 0,
             "PcmMode": false
@@ -1002,7 +1032,7 @@
           "RoomId": 1,
           "OutputState": "Off",
           "ControlSource": "FromManualMode",
-          "CurrentSummationDelivered": 87,
+          "CurrentSummationDelivered": 101,
           "InstantaneousDemand": 0,
           "TargetState": "Off",
           "EquipmentData": {
@@ -1022,7 +1052,7 @@
             "IconId": 40,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 87,
+            "CurrentSummationDelivered": 101,
             "TotalActivePower": 0,
             "ActivePower": 0,
             "PcmMode": false
@@ -1116,7 +1146,7 @@
           "RoomId": 3,
           "OutputState": "Off",
           "ControlSource": "FromManualMode",
-          "CurrentSummationDelivered": 0,
+          "CurrentSummationDelivered": 145,
           "InstantaneousDemand": 0,
           "TargetState": "Off",
           "EquipmentData": {
@@ -1136,7 +1166,7 @@
             "IconId": 47,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 0,
+            "CurrentSummationDelivered": 145,
             "TotalActivePower": 0,
             "ActivePower": 0,
             "PcmMode": false
@@ -1154,8 +1184,8 @@
           "RoomId": 4,
           "OutputState": "On",
           "ControlSource": "FromManualMode",
-          "CurrentSummationDelivered": 95,
-          "InstantaneousDemand": 6,
+          "CurrentSummationDelivered": 8836,
+          "InstantaneousDemand": 48,
           "TargetState": "On",
           "EquipmentData": {
             "id": 16,
@@ -1174,9 +1204,9 @@
             "IconId": 45,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 95,
-            "TotalActivePower": 6,
-            "ActivePower": 6,
+            "CurrentSummationDelivered": 8836,
+            "TotalActivePower": 48,
+            "ActivePower": 48,
             "PcmMode": false
           }
         },
@@ -1268,7 +1298,7 @@
           "RoomId": 4,
           "OutputState": "Off",
           "ControlSource": "FromManualMode",
-          "CurrentSummationDelivered": 0,
+          "CurrentSummationDelivered": 140,
           "InstantaneousDemand": 0,
           "TargetState": "Off",
           "EquipmentData": {
@@ -1288,7 +1318,7 @@
             "IconId": 43,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 0,
+            "CurrentSummationDelivered": 140,
             "TotalActivePower": 0,
             "ActivePower": 0,
             "PcmMode": false
@@ -1306,7 +1336,7 @@
           "RoomId": 5,
           "OutputState": "Off",
           "ControlSource": "FromManualMode",
-          "CurrentSummationDelivered": 0,
+          "CurrentSummationDelivered": 2135,
           "InstantaneousDemand": 0,
           "TargetState": "Off",
           "EquipmentData": {
@@ -1326,7 +1356,7 @@
             "IconId": 9,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 0,
+            "CurrentSummationDelivered": 2135,
             "TotalActivePower": 0,
             "ActivePower": 0,
             "PcmMode": false
@@ -1344,7 +1374,7 @@
           "RoomId": 5,
           "OutputState": "Off",
           "ControlSource": "FromManualMode",
-          "CurrentSummationDelivered": 0,
+          "CurrentSummationDelivered": 3201,
           "InstantaneousDemand": 0,
           "TargetState": "Off",
           "EquipmentData": {
@@ -1364,7 +1394,7 @@
             "IconId": 11,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 0,
+            "CurrentSummationDelivered": 3201,
             "TotalActivePower": 0,
             "ActivePower": 0,
             "PcmMode": false
@@ -1373,18 +1403,18 @@
         {
           "id": 23,
           "EquipmentId": 22,
-          "ManualState": "Off",
+          "ManualState": "On",
           "Endpoint": 1,
           "UUID": "e8869957-1684-59a1-affb-2e25b3aa7fe2",
           "Name": "K\u00fchlschrank",
           "Mode": "Manual",
           "AwayAction": "NoChange",
           "RoomId": 3,
-          "OutputState": "Off",
+          "OutputState": "On",
           "ControlSource": "FromManualMode",
-          "CurrentSummationDelivered": 0,
-          "InstantaneousDemand": 0,
-          "TargetState": "Off",
+          "CurrentSummationDelivered": 2119,
+          "InstantaneousDemand": 57,
+          "TargetState": "On",
           "EquipmentData": {
             "id": 22,
             "DeviceApplicationInstanceType": "SmartPlug",
@@ -1400,15 +1430,40 @@
             "Direction": "Forward",
             "FunctionalControlMode": "PowerContactor",
             "IconId": 6,
+            "UnderPowerNotification": {
+              "PeriodMins": 300,
+              "Limit": 0,
+              "Enabled": true
+            },
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 0,
-            "TotalActivePower": 0,
-            "ActivePower": 0,
+            "CurrentSummationDelivered": 2119,
+            "TotalActivePower": 57,
+            "ActivePower": 57,
             "PcmMode": false
           }
         }
       ],
+      "Light": [
+        {
+          "id": 1,
+          "DeviceId": 25,
+          "Endpoint": 1,
+          "IsDimmable": false,
+          "ManualLevel": -254,
+          "UUID": "4b6368dd-6777-59b5-b94b-ed0010151714",
+          "Name": "Licht.8",
+          "RoomId": 5,
+          "Mode": "Manual",
+          "AwayAction": "NoChange",
+          "CurrentState": "Off",
+          "ControlSource": "FromManualMode",
+          "TargetState": "Off",
+          "TargetPercentage": 100,
+          "IsOutputModeSupported": false
+        }
+      ],
+      "ButtonPanel": [],
       "Automation": [
         {
           "id": 1,
@@ -1434,7 +1489,7 @@
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
           "EnergyExport": "Unable",
-          "RawTotalActivePower": -83,
+          "RawTotalActivePower": -149,
           "EquipmentData": {
             "id": 5,
             "DeviceApplicationInstanceType": "PTE",
@@ -1455,9 +1510,9 @@
             "IconId": 1,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 719134,
+            "CurrentSummationDelivered": 755449,
             "CurrentSummationReceived": 0,
-            "TotalActivePower": 83,
+            "TotalActivePower": 149,
             "RMSCurrent": 0,
             "RMSCurrentPhB": 0,
             "RMSCurrentPhC": 0,
@@ -1491,7 +1546,7 @@
             "IconId": 10,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 40999,
+            "CurrentSummationDelivered": 41457,
             "CurrentSummationReceived": 0,
             "TotalActivePower": 0,
             "RMSCurrent": 0,
@@ -1511,6 +1566,8 @@
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
           "RawTotalActivePower": 0,
+          "RawDiag1": 0,
+          "ACExtAlarmsMask": 0,
           "EquipmentData": {
             "id": 7,
             "DeviceApplicationInstanceType": "PTE",
@@ -1527,7 +1584,7 @@
             "IconId": 19,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 696,
+            "CurrentSummationDelivered": 738,
             "CurrentSummationReceived": 0,
             "TotalActivePower": 0,
             "ActivePower": 0,
@@ -1546,7 +1603,7 @@
           "InstallationType": "Mono",
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "RawTotalActivePower": 11,
+          "RawTotalActivePower": 10,
           "EquipmentData": {
             "id": 8,
             "DeviceApplicationInstanceType": "PTE",
@@ -1563,10 +1620,10 @@
             "IconId": 5,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 1803,
+            "CurrentSummationDelivered": 3873,
             "CurrentSummationReceived": 0,
-            "TotalActivePower": 11,
-            "ActivePower": 11,
+            "TotalActivePower": 10,
+            "ActivePower": 10,
             "RMSCurrent": 0,
             "RMSVoltage": 237,
             "PcmMode": false
@@ -1599,7 +1656,7 @@
             "IconId": 8,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 174990,
+            "CurrentSummationDelivered": 183912,
             "CurrentSummationReceived": 0,
             "TotalActivePower": 0,
             "RMSCurrent": 0,
@@ -1607,6 +1664,32 @@
             "RMSCurrentPhC": 0,
             "PcmMode": false
           }
+        }
+      ],
+      "SmokeAlarmDevice": [
+        {
+          "id": 1,
+          "UUID": "557f2f9a-f7df-5f7d-9918-91021db57ef5",
+          "DeviceId": 29,
+          "LEDBrightness": 1,
+          "AlarmSoundLevel": 0,
+          "AlarmSoundMode": 0,
+          "LifeTime": 0,
+          "HushDuration": 10,
+          "SmokeAlarm": false,
+          "HeatAlarm": false,
+          "Tamper": false,
+          "FaultWarning": false,
+          "ACMains": false,
+          "TestMode": false,
+          "BatteryDefect": false,
+          "RemoteAlarm": false,
+          "HushMode": false,
+          "ReportCount": 6,
+          "EnableNotification": true,
+          "SupervisionNotify": true,
+          "RestoreNotify": true,
+          "MeasuredTemperature": 0
         }
       ],
       "DeviceCapabilityMatrix": {
@@ -1655,8 +1738,8 @@
         "PairingStatus": "Paired",
         "OverrideType": "None",
         "provisionTokenSucceedCount": 1,
-        "provisionTokenFailCount": 571,
-        "provisionTokenRequestCount": 617,
+        "provisionTokenFailCount": 574,
+        "provisionTokenRequestCount": 620,
         "TimeZoneOffset": 60,
         "AutomaticDaylightSaving": true,
         "SystemMode": "Heat",
@@ -1683,49 +1766,49 @@
         "SummerComfortEnabled": false,
         "IndoorDiscomfortTemperature": 250,
         "OutdoorDiscomfortTemperature": 270,
-        "UnixTime": 1700762220,
+        "UnixTime": 1701505680,
         "ActiveSystemVersion": "4.22.3-7ec0f49",
         "ZigbeePermitJoinActive": false,
         "BrandName": "WiserHeat",
         "LocalDateAndTime": {
           "Year": 2023,
-          "Month": "November",
-          "Date": 23,
-          "Day": "Thursday",
-          "Time": 1857
+          "Month": "December",
+          "Date": 2,
+          "Day": "Saturday",
+          "Time": 928
         },
         "HeatingButtonOverrideState": "Off",
         "HotWaterButtonOverrideState": "Off",
         "OpenThermConnectionStatus": "Disconnected",
         "SunriseTimes": [
-          729,
-          730,
-          732,
-          733,
-          735,
-          736,
-          738,
-          739,
-          740,
           742,
           743,
           744,
-          746
+          746,
+          747,
+          748,
+          750,
+          751,
+          752,
+          753,
+          754,
+          755,
+          757
         ],
         "SunsetTimes": [
-          1640,
-          1639,
-          1638,
-          1637,
-          1636,
-          1635,
-          1634,
-          1633,
-          1632,
           1632,
           1631,
           1630,
-          1630
+          1630,
+          1629,
+          1629,
+          1628,
+          1628,
+          1627,
+          1627,
+          1627,
+          1626,
+          1626
         ],
         "isTrialist": false,
         "isProvisioned": true,
@@ -1755,9 +1838,9 @@
           "IconId": 1,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 719134,
+          "CurrentSummationDelivered": 755449,
           "CurrentSummationReceived": 0,
-          "TotalActivePower": 83,
+          "TotalActivePower": 149,
           "RMSCurrent": 0,
           "RMSCurrentPhB": 0,
           "RMSCurrentPhC": 0,
@@ -1779,7 +1862,7 @@
           "IconId": 10,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 40999,
+          "CurrentSummationDelivered": 41457,
           "CurrentSummationReceived": 0,
           "TotalActivePower": 0,
           "RMSCurrent": 0,
@@ -1803,7 +1886,7 @@
           "IconId": 19,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 696,
+          "CurrentSummationDelivered": 738,
           "CurrentSummationReceived": 0,
           "TotalActivePower": 0,
           "ActivePower": 0,
@@ -1827,10 +1910,10 @@
           "IconId": 5,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 1803,
+          "CurrentSummationDelivered": 3873,
           "CurrentSummationReceived": 0,
-          "TotalActivePower": 11,
-          "ActivePower": 11,
+          "TotalActivePower": 10,
+          "ActivePower": 10,
           "RMSCurrent": 0,
           "RMSVoltage": 237,
           "PcmMode": false
@@ -1851,7 +1934,7 @@
           "IconId": 8,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 174990,
+          "CurrentSummationDelivered": 183912,
           "CurrentSummationReceived": 0,
           "TotalActivePower": 0,
           "RMSCurrent": 0,
@@ -1876,7 +1959,7 @@
           "IconId": 3,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 0,
+          "CurrentSummationDelivered": 1576,
           "TotalActivePower": 0,
           "ActivePower": 0,
           "PcmMode": false
@@ -1898,7 +1981,7 @@
           "IconId": 8,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 0,
+          "CurrentSummationDelivered": 105,
           "TotalActivePower": 0,
           "ActivePower": 0,
           "PcmMode": false
@@ -1920,7 +2003,7 @@
           "IconId": 40,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 87,
+          "CurrentSummationDelivered": 101,
           "TotalActivePower": 0,
           "ActivePower": 0,
           "PcmMode": false
@@ -1986,7 +2069,7 @@
           "IconId": 47,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 0,
+          "CurrentSummationDelivered": 145,
           "TotalActivePower": 0,
           "ActivePower": 0,
           "PcmMode": false
@@ -2008,9 +2091,9 @@
           "IconId": 45,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 95,
-          "TotalActivePower": 6,
-          "ActivePower": 6,
+          "CurrentSummationDelivered": 8836,
+          "TotalActivePower": 48,
+          "ActivePower": 48,
           "PcmMode": false
         },
         {
@@ -2074,7 +2157,7 @@
           "IconId": 43,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 0,
+          "CurrentSummationDelivered": 140,
           "TotalActivePower": 0,
           "ActivePower": 0,
           "PcmMode": false
@@ -2096,7 +2179,7 @@
           "IconId": 9,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 0,
+          "CurrentSummationDelivered": 2135,
           "TotalActivePower": 0,
           "ActivePower": 0,
           "PcmMode": false
@@ -2118,7 +2201,7 @@
           "IconId": 11,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 0,
+          "CurrentSummationDelivered": 3201,
           "TotalActivePower": 0,
           "ActivePower": 0,
           "PcmMode": false
@@ -2138,11 +2221,16 @@
           "Direction": "Forward",
           "FunctionalControlMode": "PowerContactor",
           "IconId": 6,
+          "UnderPowerNotification": {
+            "PeriodMins": 300,
+            "Limit": 0,
+            "Enabled": true
+          },
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 0,
-          "TotalActivePower": 0,
-          "ActivePower": 0,
+          "CurrentSummationDelivered": 2119,
+          "TotalActivePower": 57,
+          "ActivePower": 57,
           "PcmMode": false
         }
       ]
@@ -2185,17 +2273,19 @@
             "SSID": "ANON_SSID",
             "Channel": 255,
             "SecurityMode": "WPA_WPA2_PSK",
-            "RSSI": -100
+            "RSSI": -45
           }
         ],
         "ConnectionFailures": 0,
         "MacAddress": "ANON_MAC",
         "RSSI": {
-          "Current": -44,
-          "Min": -53,
-          "Max": -41
+          "Current": -40,
+          "Min": -57,
+          "Max": -40
         },
-        "Channel": 255
+        "Channel": 255,
+        "WfxRecoveries": 4,
+        "WifiReconfigurations": 1
       }
     },
     "Schedule": {
@@ -2245,11 +2335,11 @@
             1630,
             -2230
           ],
-          "CurrentState": "On",
+          "CurrentState": "Off",
           "Next": {
-            "Day": "Thursday",
-            "Time": 2230,
-            "State": "Off"
+            "Day": "Saturday",
+            "Time": 1630,
+            "State": "On"
           }
         }
       ]
