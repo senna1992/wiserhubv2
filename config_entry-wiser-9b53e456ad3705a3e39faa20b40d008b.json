@@ -1,55 +1,63 @@
 {
   "home_assistant": {
     "installation_type": "Home Assistant OS",
-    "version": "2023.12.3",
+    "version": "2024.3.0",
     "dev": false,
     "hassio": true,
     "virtualenv": false,
-    "python_version": "3.11.6",
+    "python_version": "3.12.2",
     "docker": true,
     "arch": "aarch64",
     "timezone": "Europe/Berlin",
     "os_name": "Linux",
-    "os_version": "6.1.58-haos-raspi",
-    "supervisor": "2023.12.0",
-    "host_os": "Home Assistant OS 11.2",
+    "os_version": "6.1.73-haos-raspi",
+    "supervisor": "2024.02.1",
+    "host_os": "Home Assistant OS 12.0",
     "docker_version": "24.0.7",
     "chassis": "embedded",
     "run_as_root": true
   },
   "custom_components": {
     "hacs": {
-      "version": "1.33.0",
+      "version": "1.34.0",
       "requirements": [
         "aiogithubapi>=22.10.1"
       ]
     },
+    "spook": {
+      "version": "2.2.2",
+      "requirements": []
+    },
     "nodered": {
-      "version": "3.1.2",
+      "version": "3.1.3",
       "requirements": []
     },
     "wiser": {
-      "version": "3.4.1",
+      "version": "3.4.6",
       "requirements": [
-        "aioWiserHeatAPI==1.5.1"
+        "aioWiserHeatAPI==1.5.13"
       ]
     },
     "o365": {
-      "version": "v4.4.4",
+      "version": "v4.7.0",
       "requirements": [
-        "O365==2.0.28",
+        "O365==2.0.34",
         "BeautifulSoup4>=4.10.0"
       ]
     },
     "waste_collection_schedule": {
-      "version": "1.44.0",
+      "version": "1.46.0",
       "requirements": [
         "icalendar",
         "recurring_ical_events",
         "icalevents",
-        "bs4",
+        "beautifulsoup4",
         "lxml"
       ]
+    },
+    "spook_inverse": {
+      "version": "2.2.2",
+      "requirements": []
     },
     "ring_martinpham": {
       "version": "0.0.1",
@@ -74,9 +82,9 @@
     "iot_class": "local_polling",
     "issue_tracker": "https://github.com/asantaga/wiserHomeAssistantPlatform/issues",
     "requirements": [
-      "aioWiserHeatAPI==1.5.1"
+      "aioWiserHeatAPI==1.5.13"
     ],
-    "version": "3.4.1",
+    "version": "3.4.6",
     "zeroconf": [
       {
         "type": "_http._tcp.local.",
@@ -146,9 +154,10 @@
       "Room": [
         {
           "id": 1,
-          "ManualSetPoint": 165,
-          "OverrideType": "None",
-          "HeatingRate": 1200,
+          "ManualSetPoint": -200,
+          "ScheduleId": 1,
+          "ComfortModeScore": 4924,
+          "HeatingRate": 1848,
           "ClimateCapabilities": {
             "HeatingSupported": true,
             "CoolingSupported": false,
@@ -176,21 +185,21 @@
           "OccupiedToUnoccupiedDelay": 5,
           "MinimumOccupiedTime": 20,
           "HVACMode": "Heat",
-          "CalculatedTemperature": 169,
-          "CurrentSetPoint": 165,
+          "CalculatedTemperature": 168,
+          "CurrentSetPoint": -200,
           "PercentageDemand": 0,
           "ControlOutputState": "Off",
+          "WindowState": "Closed",
           "SetpointOrigin": "FromManualMode",
-          "DisplayedSetPoint": 165,
-          "AwayModeSuppressed": false,
+          "DisplayedSetPoint": -200,
+          "ScheduledSetPoint": 170,
           "RoundedAlexaTemperature": 170,
           "EffectiveMode": "Manual",
           "PercentageDemandForItrv": 0,
           "ControlDirection": "Heat",
-          "Occupancy": "Occupied",
           "OccupancyCapable": false,
-          "OccupiedHeatingSetPoint": 165,
-          "UnoccupiedHeatingSetPoint": 145,
+          "OccupiedHeatingSetPoint": -200,
+          "UnoccupiedHeatingSetPoint": -200,
           "ClimateDemandForUI": 0
         },
         {
@@ -222,14 +231,14 @@
           "Invalid": "NothingAssigned",
           "EffectiveMode": "Manual",
           "ControlDirection": "None",
-          "Occupancy": "Occupied",
           "OccupancyCapable": false
         },
         {
           "id": 3,
           "ManualSetPoint": 190,
-          "OverrideType": "None",
-          "HeatingRate": 1200,
+          "ScheduleId": 2,
+          "ComfortModeScore": 4293,
+          "HeatingRate": 1680,
           "ClimateCapabilities": {
             "HeatingSupported": true,
             "CoolingSupported": false,
@@ -257,18 +266,18 @@
           "OccupiedToUnoccupiedDelay": 5,
           "MinimumOccupiedTime": 20,
           "HVACMode": "Heat",
-          "CalculatedTemperature": 193,
+          "CalculatedTemperature": 195,
           "CurrentSetPoint": 190,
           "PercentageDemand": 0,
           "ControlOutputState": "Off",
+          "WindowState": "Closed",
           "SetpointOrigin": "FromManualMode",
           "DisplayedSetPoint": 190,
-          "AwayModeSuppressed": false,
+          "ScheduledSetPoint": 170,
           "RoundedAlexaTemperature": 195,
           "EffectiveMode": "Manual",
           "PercentageDemandForItrv": 0,
           "ControlDirection": "Heat",
-          "Occupancy": "Occupied",
           "OccupancyCapable": false,
           "OccupiedHeatingSetPoint": 190,
           "UnoccupiedHeatingSetPoint": 170,
@@ -277,7 +286,7 @@
         {
           "id": 4,
           "ManualSetPoint": 190,
-          "OverrideType": "None",
+          "ScheduleId": 3,
           "HeatingRate": 1200,
           "ClimateCapabilities": {
             "HeatingSupported": true,
@@ -306,18 +315,19 @@
           "OccupiedToUnoccupiedDelay": 5,
           "MinimumOccupiedTime": 20,
           "HVACMode": "Heat",
-          "CalculatedTemperature": 196,
+          "CalculatedTemperature": 203,
           "CurrentSetPoint": 190,
           "PercentageDemand": 0,
           "ControlOutputState": "Off",
+          "WindowState": "Closed",
           "SetpointOrigin": "FromManualMode",
           "DisplayedSetPoint": 190,
+          "ScheduledSetPoint": 170,
           "AwayModeSuppressed": false,
-          "RoundedAlexaTemperature": 195,
+          "RoundedAlexaTemperature": 205,
           "EffectiveMode": "Manual",
           "PercentageDemandForItrv": 0,
           "ControlDirection": "Heat",
-          "Occupancy": "Occupied",
           "OccupancyCapable": false,
           "OccupiedHeatingSetPoint": 190,
           "UnoccupiedHeatingSetPoint": 170,
@@ -352,7 +362,6 @@
           "Invalid": "NothingAssigned",
           "EffectiveMode": "Manual",
           "ControlDirection": "None",
-          "Occupancy": "Occupied",
           "OccupancyCapable": false
         },
         {
@@ -384,14 +393,14 @@
           "Invalid": "NothingAssigned",
           "EffectiveMode": "Manual",
           "ControlDirection": "None",
-          "Occupancy": "Occupied",
           "OccupancyCapable": false
         },
         {
           "id": 8,
           "ManualSetPoint": 190,
-          "OverrideType": "None",
-          "HeatingRate": 1200,
+          "ScheduleId": 4,
+          "ComfortModeScore": 4620,
+          "HeatingRate": 1680,
           "ClimateCapabilities": {
             "HeatingSupported": true,
             "CoolingSupported": false,
@@ -409,6 +418,7 @@
             "HydronicChannelSelection": false,
             "OnOffSupported": false
           },
+          "RoomStatId": 36,
           "SmartValveIds": [
             30
           ],
@@ -419,19 +429,18 @@
           "OccupiedToUnoccupiedDelay": 5,
           "MinimumOccupiedTime": 20,
           "HVACMode": "Heat",
-          "CalculatedTemperature": 191,
+          "CalculatedTemperature": 196,
           "CurrentSetPoint": 190,
           "PercentageDemand": 0,
           "ControlOutputState": "Off",
           "WindowState": "Closed",
           "SetpointOrigin": "FromManualMode",
           "DisplayedSetPoint": 190,
-          "AwayModeSuppressed": false,
-          "RoundedAlexaTemperature": 190,
+          "ScheduledSetPoint": 170,
+          "RoundedAlexaTemperature": 195,
           "EffectiveMode": "Manual",
           "PercentageDemandForItrv": 0,
           "ControlDirection": "Heat",
-          "Occupancy": "Occupied",
           "OccupancyCapable": false,
           "OccupiedHeatingSetPoint": 190,
           "UnoccupiedHeatingSetPoint": 170,
@@ -466,13 +475,12 @@
           "Invalid": "NothingAssigned",
           "EffectiveMode": "Manual",
           "ControlDirection": "None",
-          "Occupancy": "Occupied",
           "OccupancyCapable": false
         },
         {
           "id": 10,
-          "ManualSetPoint": 180,
-          "OverrideType": "None",
+          "ManualSetPoint": 160,
+          "ScheduleId": 5,
           "HeatingRate": 1200,
           "ClimateCapabilities": {
             "HeatingSupported": true,
@@ -501,21 +509,21 @@
           "OccupiedToUnoccupiedDelay": 5,
           "MinimumOccupiedTime": 20,
           "HVACMode": "Heat",
-          "CalculatedTemperature": 188,
-          "CurrentSetPoint": 180,
+          "CalculatedTemperature": 190,
+          "CurrentSetPoint": 160,
           "PercentageDemand": 0,
           "ControlOutputState": "Off",
+          "WindowState": "Closed",
           "SetpointOrigin": "FromManualMode",
-          "DisplayedSetPoint": 180,
-          "AwayModeSuppressed": false,
+          "DisplayedSetPoint": 160,
+          "ScheduledSetPoint": 170,
           "RoundedAlexaTemperature": 190,
           "EffectiveMode": "Manual",
           "PercentageDemandForItrv": 0,
           "ControlDirection": "Heat",
-          "Occupancy": "Occupied",
           "OccupancyCapable": false,
-          "OccupiedHeatingSetPoint": 180,
-          "UnoccupiedHeatingSetPoint": 160,
+          "OccupiedHeatingSetPoint": 160,
+          "UnoccupiedHeatingSetPoint": 140,
           "ClimateDemandForUI": 0
         }
       ],
@@ -532,9 +540,8 @@
           "DeviceLockEnabled": false,
           "DisplayedSignalStrength": "VeryGood",
           "ReceptionOfController": {
-            "Rssi": -43
-          },
-          "PendingZigbeeMessageMask": 1
+            "Rssi": -41
+          }
         },
         {
           "id": 5,
@@ -576,7 +583,7 @@
           "DeviceLockEnabled": false,
           "DisplayedSignalStrength": "VeryGood",
           "ReceptionOfController": {
-            "Rssi": -42,
+            "Rssi": -43,
             "Lqi": 255
           },
           "BindingsStatus": "SetCorrectly",
@@ -600,8 +607,8 @@
           "DeviceLockEnabled": false,
           "DisplayedSignalStrength": "VeryGood",
           "ReceptionOfController": {
-            "Rssi": -94,
-            "Lqi": 255
+            "Rssi": -84,
+            "Lqi": 240
           },
           "BindingsStatus": "SetCorrectly",
           "ReportConfigStatus": "SetCorrectly",
@@ -624,7 +631,7 @@
           "DeviceLockEnabled": false,
           "DisplayedSignalStrength": "VeryGood",
           "ReceptionOfController": {
-            "Rssi": -47,
+            "Rssi": -48,
             "Lqi": 255
           },
           "BindingsStatus": "SetCorrectly",
@@ -648,7 +655,7 @@
           "DeviceLockEnabled": false,
           "DisplayedSignalStrength": "VeryGood",
           "ReceptionOfController": {
-            "Rssi": -41,
+            "Rssi": -40,
             "Lqi": 255
           },
           "BindingsStatus": "SetCorrectly",
@@ -884,7 +891,7 @@
         },
         {
           "id": 22,
-          "NodeId": 37933,
+          "NodeId": 8240,
           "ProductType": "SmartPlug",
           "ProductIdentifier": "HeimanSmartplug",
           "ActiveFirmwareVersion": "0.0.34",
@@ -924,7 +931,7 @@
         },
         {
           "id": 25,
-          "NodeId": 6531,
+          "NodeId": 23191,
           "ProductType": "OnOffLight",
           "ProductIdentifier": "C4BLight",
           "ActiveFirmwareVersion": "2.10.1",
@@ -940,8 +947,8 @@
           "DeviceLockEnabled": false,
           "DisplayedSignalStrength": "Good",
           "ReceptionOfController": {
-            "Rssi": -61,
-            "Lqi": 156
+            "Rssi": -66,
+            "Lqi": 136
           },
           "BindingsStatus": "SetCorrectly",
           "ReportConfigStatus": "SetCorrectly",
@@ -989,14 +996,13 @@
           "UUID": "7575cfe7-d381-550a-96ca-812768964717",
           "DeviceLockEnabled": false,
           "DisplayedSignalStrength": "VeryGood",
-          "BatteryVoltage": 31,
+          "BatteryVoltage": 29,
           "BatteryLevel": "Normal",
           "ReceptionOfController": {
-            "Rssi": -40,
-            "Lqi": 240
+            "Rssi": -59,
+            "Lqi": 164
           },
           "PendingZigbeeMessageMask": 0,
-          "OtaLastImageSentBytes": 235842,
           "BindingsStatus": "SetCorrectly",
           "ReportConfigStatus": "SetCorrectly",
           "AttributesStatus": "SetCorrectly"
@@ -1018,15 +1024,14 @@
           "Type": "ZigbeeDevice",
           "UUID": "fbec2e8d-6761-57ee-9de5-ca34293a403a",
           "DeviceLockEnabled": false,
-          "DisplayedSignalStrength": "Good",
-          "BatteryVoltage": 31,
+          "DisplayedSignalStrength": "VeryGood",
+          "BatteryVoltage": 29,
           "BatteryLevel": "Normal",
           "ReceptionOfController": {
-            "Rssi": -62,
-            "Lqi": 152
+            "Rssi": -57,
+            "Lqi": 172
           },
           "PendingZigbeeMessageMask": 0,
-          "OtaLastImageSentBytes": 235842,
           "BindingsStatus": "SetCorrectly",
           "ReportConfigStatus": "SetCorrectly",
           "AttributesStatus": "SetCorrectly"
@@ -1049,14 +1054,13 @@
           "UUID": "d5f69dcd-318f-54c1-9757-3914e9c8f397",
           "DeviceLockEnabled": false,
           "DisplayedSignalStrength": "VeryGood",
-          "BatteryVoltage": 31,
+          "BatteryVoltage": 29,
           "BatteryLevel": "Normal",
           "ReceptionOfController": {
-            "Rssi": -45,
-            "Lqi": 220
+            "Rssi": -47,
+            "Lqi": 212
           },
           "PendingZigbeeMessageMask": 0,
-          "OtaLastImageSentBytes": 235842,
           "BindingsStatus": "SetCorrectly",
           "ReportConfigStatus": "SetCorrectly",
           "AttributesStatus": "SetCorrectly"
@@ -1079,14 +1083,13 @@
           "UUID": "ca0f5923-f8f6-528d-82c5-fca34b23ac4e",
           "DeviceLockEnabled": false,
           "DisplayedSignalStrength": "VeryGood",
-          "BatteryVoltage": 31,
+          "BatteryVoltage": 30,
           "BatteryLevel": "Normal",
           "ReceptionOfController": {
             "Rssi": -44,
             "Lqi": 224
           },
           "PendingZigbeeMessageMask": 0,
-          "OtaLastImageSentBytes": 235842,
           "BindingsStatus": "SetCorrectly",
           "ReportConfigStatus": "SetCorrectly",
           "AttributesStatus": "SetCorrectly"
@@ -1109,38 +1112,41 @@
           "UUID": "0b67f40a-f730-5b87-b917-f69576316718",
           "DeviceLockEnabled": false,
           "DisplayedSignalStrength": "VeryGood",
-          "IdentifyActive": false,
-          "BatteryVoltage": 31,
+          "BatteryVoltage": 29,
           "BatteryLevel": "Normal",
           "ReceptionOfController": {
-            "Rssi": -58,
-            "Lqi": 168
+            "Rssi": -53,
+            "Lqi": 188
           },
           "PendingZigbeeMessageMask": 0,
-          "OtaLastImageSentBytes": 235842,
           "BindingsStatus": "SetCorrectly",
           "ReportConfigStatus": "SetCorrectly",
           "AttributesStatus": "SetCorrectly"
         },
         {
           "id": 36,
-          "NodeId": 43974,
-          "ProductType": "ButtonPanel",
-          "ProductIdentifier": "FLS",
-          "ActiveFirmwareVersion": "2.9.1",
-          "ModelIdentifier": "Unknown",
+          "NodeId": 43265,
+          "ProductType": "RoomStat",
+          "ProductIdentifier": "RoomStat",
+          "ActiveFirmwareVersion": "0.60.3",
+          "ModelIdentifier": "Thermostat",
           "SerialNumber": "ANON_SERIAL",
-          "ProductModel": "FLS/SYSTEM-M/4",
+          "ProductModel": "",
           "OtaImageQueryCount": 0,
           "LastOtaImageQueryCount": 0,
-          "OtaVersion": 34144767,
+          "ParentNodeId": 34228,
+          "OtaVersion": 60003,
           "OtaHardwareVersion": 256,
           "Type": "ZigbeeDevice",
-          "UUID": "5d7ddfdb-cbf2-5013-8031-4a379b1e0306",
-          "Name": "test 2x",
+          "UUID": "29c48ccc-4109-5e1c-a4e5-e0c6b429119c",
           "DeviceLockEnabled": false,
-          "DisplayedSignalStrength": "Online",
-          "PendingZigbeeMessageMask": 16,
+          "DisplayedSignalStrength": "VeryGood",
+          "BatteryVoltage": 30,
+          "BatteryLevel": "Normal",
+          "ReceptionOfController": {
+            "Rssi": -57,
+            "Lqi": 172
+          },
           "BindingsStatus": "SetCorrectly",
           "ReportConfigStatus": "SetCorrectly",
           "AttributesStatus": "SetCorrectly"
@@ -1300,9 +1306,10 @@
           "UUID": "0a8b64bf-cba5-5d5a-9d7e-24b2c3b9d72e",
           "MountingOrientation": "Horizontal",
           "SetPoint": 190,
-          "MeasuredTemperature": 191,
+          "MeasuredTemperature": 193,
           "PercentageDemand": 0,
           "WindowState": "Closed",
+          "ExternalRoomStatTemperature": 196,
           "RoomId": 8
         },
         {
@@ -1310,7 +1317,7 @@
           "UUID": "abdfeac2-2167-5b09-b7d4-0652009b9a99",
           "MountingOrientation": "Horizontal",
           "SetPoint": 190,
-          "MeasuredTemperature": 196,
+          "MeasuredTemperature": 203,
           "PercentageDemand": 0,
           "WindowState": "Closed",
           "RoomId": 4
@@ -1320,7 +1327,7 @@
           "UUID": "727a3e17-6517-5c02-a0b7-a2ac5fa809b0",
           "MountingOrientation": "Horizontal",
           "SetPoint": 190,
-          "MeasuredTemperature": 193,
+          "MeasuredTemperature": 195,
           "PercentageDemand": 0,
           "WindowState": "Closed",
           "RoomId": 3
@@ -1329,8 +1336,8 @@
           "id": 33,
           "UUID": "8de8fece-dcf9-5ab4-ac77-72bbedbc97f2",
           "MountingOrientation": "Horizontal",
-          "SetPoint": 180,
-          "MeasuredTemperature": 188,
+          "SetPoint": 160,
+          "MeasuredTemperature": 190,
           "PercentageDemand": 0,
           "WindowState": "Closed",
           "RoomId": 10
@@ -1339,11 +1346,21 @@
           "id": 34,
           "UUID": "360015a0-41ad-589b-8260-52e99dba852a",
           "MountingOrientation": "Horizontal",
-          "SetPoint": 165,
-          "MeasuredTemperature": 169,
+          "SetPoint": -200,
+          "MeasuredTemperature": 168,
           "PercentageDemand": 0,
           "WindowState": "Closed",
           "RoomId": 1
+        }
+      ],
+      "RoomStat": [
+        {
+          "id": 36,
+          "UUID": "239717e4-dad4-57f8-ab3e-f182923e8d5b",
+          "SetPoint": 190,
+          "MeasuredTemperature": 196,
+          "MeasuredHumidity": 50,
+          "RoomId": 8
         }
       ],
       "SmartPlug": [
@@ -1359,7 +1376,7 @@
           "RoomId": 3,
           "OutputState": "Off",
           "ControlSource": "FromManualMode",
-          "CurrentSummationDelivered": 3047,
+          "CurrentSummationDelivered": 9039,
           "InstantaneousDemand": 0,
           "TargetState": "Off",
           "EquipmentData": {
@@ -1379,7 +1396,7 @@
             "IconId": 3,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 3047,
+            "CurrentSummationDelivered": 9039,
             "TotalActivePower": 0,
             "ActivePower": 0,
             "PcmMode": false
@@ -1435,7 +1452,7 @@
           "RoomId": 1,
           "OutputState": "Off",
           "ControlSource": "FromManualMode",
-          "CurrentSummationDelivered": 244,
+          "CurrentSummationDelivered": 309,
           "InstantaneousDemand": 0,
           "TargetState": "Off",
           "EquipmentData": {
@@ -1455,7 +1472,7 @@
             "IconId": 40,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 244,
+            "CurrentSummationDelivered": 309,
             "TotalActivePower": 0,
             "ActivePower": 0,
             "PcmMode": false
@@ -1473,7 +1490,7 @@
           "RoomId": 8,
           "OutputState": "Off",
           "ControlSource": "FromManualMode",
-          "CurrentSummationDelivered": 61,
+          "CurrentSummationDelivered": 244,
           "InstantaneousDemand": 0,
           "TargetState": "Off",
           "EquipmentData": {
@@ -1493,7 +1510,7 @@
             "IconId": 43,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 61,
+            "CurrentSummationDelivered": 244,
             "TotalActivePower": 0,
             "ActivePower": 0,
             "PcmMode": false
@@ -1511,7 +1528,7 @@
           "RoomId": 9,
           "OutputState": "Off",
           "ControlSource": "FromManualMode",
-          "CurrentSummationDelivered": 0,
+          "CurrentSummationDelivered": 660,
           "InstantaneousDemand": 0,
           "TargetState": "Off",
           "EquipmentData": {
@@ -1531,7 +1548,7 @@
             "IconId": 42,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 0,
+            "CurrentSummationDelivered": 660,
             "TotalActivePower": 0,
             "ActivePower": 0,
             "PcmMode": false
@@ -1549,7 +1566,7 @@
           "RoomId": 3,
           "OutputState": "Off",
           "ControlSource": "FromManualMode",
-          "CurrentSummationDelivered": 1038,
+          "CurrentSummationDelivered": 4340,
           "InstantaneousDemand": 0,
           "TargetState": "Off",
           "EquipmentData": {
@@ -1569,7 +1586,7 @@
             "IconId": 47,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 1038,
+            "CurrentSummationDelivered": 4340,
             "TotalActivePower": 0,
             "ActivePower": 0,
             "PcmMode": false
@@ -1587,8 +1604,8 @@
           "RoomId": 4,
           "OutputState": "On",
           "ControlSource": "FromManualMode",
-          "CurrentSummationDelivered": 58398,
-          "InstantaneousDemand": 50,
+          "CurrentSummationDelivered": 201939,
+          "InstantaneousDemand": 52,
           "TargetState": "On",
           "EquipmentData": {
             "id": 16,
@@ -1607,9 +1624,9 @@
             "IconId": 45,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 58398,
-            "TotalActivePower": 50,
-            "ActivePower": 50,
+            "CurrentSummationDelivered": 201939,
+            "TotalActivePower": 52,
+            "ActivePower": 52,
             "PcmMode": false
           }
         },
@@ -1625,7 +1642,7 @@
           "RoomId": 4,
           "OutputState": "Off",
           "ControlSource": "FromManualMode",
-          "CurrentSummationDelivered": 72,
+          "CurrentSummationDelivered": 936,
           "InstantaneousDemand": 0,
           "TargetState": "Off",
           "EquipmentData": {
@@ -1645,7 +1662,7 @@
             "IconId": 34,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 72,
+            "CurrentSummationDelivered": 936,
             "TotalActivePower": 0,
             "ActivePower": 0,
             "PcmMode": false
@@ -1663,7 +1680,7 @@
           "RoomId": 1,
           "OutputState": "Off",
           "ControlSource": "FromManualMode",
-          "CurrentSummationDelivered": 226,
+          "CurrentSummationDelivered": 616,
           "InstantaneousDemand": 0,
           "TargetState": "Off",
           "EquipmentData": {
@@ -1683,7 +1700,7 @@
             "IconId": 41,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 226,
+            "CurrentSummationDelivered": 616,
             "TotalActivePower": 0,
             "ActivePower": 0,
             "PcmMode": false
@@ -1692,18 +1709,18 @@
         {
           "id": 20,
           "EquipmentId": 19,
-          "ManualState": "Off",
+          "ManualState": "On",
           "Endpoint": 1,
           "UUID": "10c5d544-5d7c-5481-ad8a-3d86ee3a4138",
           "Name": "Dreame",
           "Mode": "Manual",
           "AwayAction": "Off",
           "RoomId": 4,
-          "OutputState": "Off",
+          "OutputState": "On",
           "ControlSource": "FromManualMode",
-          "CurrentSummationDelivered": 491,
-          "InstantaneousDemand": 0,
-          "TargetState": "Off",
+          "CurrentSummationDelivered": 1129,
+          "InstantaneousDemand": 22,
+          "TargetState": "On",
           "EquipmentData": {
             "id": 19,
             "DeviceApplicationInstanceType": "SmartPlug",
@@ -1721,27 +1738,27 @@
             "IconId": 43,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 491,
-            "TotalActivePower": 0,
-            "ActivePower": 0,
+            "CurrentSummationDelivered": 1129,
+            "TotalActivePower": 22,
+            "ActivePower": 22,
             "PcmMode": false
           }
         },
         {
           "id": 21,
           "EquipmentId": 20,
-          "ManualState": "Off",
+          "ManualState": "On",
           "Endpoint": 1,
           "UUID": "4b0a0eb7-b1be-5e98-89dc-09cc37e2a43d",
           "Name": "Waschmaschine",
           "Mode": "Manual",
           "AwayAction": "NoChange",
           "RoomId": 5,
-          "OutputState": "Off",
+          "OutputState": "On",
           "ControlSource": "FromManualMode",
-          "CurrentSummationDelivered": 10780,
-          "InstantaneousDemand": 0,
-          "TargetState": "Off",
+          "CurrentSummationDelivered": 31521,
+          "InstantaneousDemand": 1605,
+          "TargetState": "On",
           "EquipmentData": {
             "id": 20,
             "DeviceApplicationInstanceType": "SmartPlug",
@@ -1759,27 +1776,27 @@
             "IconId": 9,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 10780,
-            "TotalActivePower": 0,
-            "ActivePower": 0,
+            "CurrentSummationDelivered": 31521,
+            "TotalActivePower": 1605,
+            "ActivePower": 1605,
             "PcmMode": false
           }
         },
         {
           "id": 22,
           "EquipmentId": 21,
-          "ManualState": "Off",
+          "ManualState": "On",
           "Endpoint": 1,
           "UUID": "b97e60bb-a879-5947-ae96-5098cd4ddc9d",
           "Name": "Trockner",
           "Mode": "Manual",
           "AwayAction": "NoChange",
           "RoomId": 5,
-          "OutputState": "Off",
+          "OutputState": "On",
           "ControlSource": "FromManualMode",
-          "CurrentSummationDelivered": 15062,
-          "InstantaneousDemand": 0,
-          "TargetState": "Off",
+          "CurrentSummationDelivered": 46101,
+          "InstantaneousDemand": 409,
+          "TargetState": "On",
           "EquipmentData": {
             "id": 21,
             "DeviceApplicationInstanceType": "SmartPlug",
@@ -1797,9 +1814,9 @@
             "IconId": 11,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 15062,
-            "TotalActivePower": 0,
-            "ActivePower": 0,
+            "CurrentSummationDelivered": 46101,
+            "TotalActivePower": 409,
+            "ActivePower": 409,
             "PcmMode": false
           }
         },
@@ -1815,7 +1832,7 @@
           "RoomId": 3,
           "OutputState": "On",
           "ControlSource": "FromManualMode",
-          "CurrentSummationDelivered": 8418,
+          "CurrentSummationDelivered": 27481,
           "InstantaneousDemand": 0,
           "TargetState": "On",
           "EquipmentData": {
@@ -1840,7 +1857,7 @@
             },
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 8418,
+            "CurrentSummationDelivered": 27481,
             "TotalActivePower": 0,
             "ActivePower": 0,
             "PcmMode": false
@@ -1866,61 +1883,6 @@
           "IsOutputModeSupported": false
         }
       ],
-      "ButtonPanel": [
-        {
-          "id": 36,
-          "UUID": "267db03b-ec81-5a36-a295-bf71c1818854",
-          "NumberOfGangs": 2,
-          "RoomId": 6,
-          "Events": [
-            {
-              "id": 1,
-              "Name": "Top Left",
-              "Type": "ButtonPress",
-              "Action": {
-                "Domain": "SmartPlug",
-                "Id": 24,
-                "Action": "RequestOutput",
-                "Value": "On"
-              }
-            },
-            {
-              "id": 2,
-              "Name": "Bottom Left",
-              "Type": "ButtonPress",
-              "Action": {
-                "Domain": "SmartPlug",
-                "Id": 24,
-                "Action": "RequestOutput",
-                "Value": "Off"
-              }
-            },
-            {
-              "id": 3,
-              "Name": "Top Right",
-              "Type": "ButtonPress",
-              "Action": {
-                "Domain": "SmartPlug",
-                "Id": 14,
-                "Action": "RequestOutput",
-                "Value": "On"
-              }
-            },
-            {
-              "id": 4,
-              "Name": "Bottom Right",
-              "Type": "ButtonPress",
-              "Action": {
-                "Domain": "SmartPlug",
-                "Id": 14,
-                "Action": "RequestOutput",
-                "Value": "Off"
-              }
-            }
-          ]
-        }
-      ],
-      "Automation": [],
       "PTE": [
         {
           "id": 5,
@@ -1936,7 +1898,7 @@
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
           "EnergyExport": "Unable",
-          "RawTotalActivePower": -162,
+          "RawTotalActivePower": -580,
           "EquipmentData": {
             "id": 5,
             "DeviceApplicationInstanceType": "PTE",
@@ -1957,10 +1919,10 @@
             "IconId": 1,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 882170,
+            "CurrentSummationDelivered": 1260290,
             "CurrentSummationReceived": 0,
-            "TotalActivePower": 162,
-            "RMSCurrent": 0,
+            "TotalActivePower": 580,
+            "RMSCurrent": 2,
             "RMSCurrentPhB": 0,
             "RMSCurrentPhC": 0,
             "PcmMode": false
@@ -1993,7 +1955,7 @@
             "IconId": 10,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 41457,
+            "CurrentSummationDelivered": 47290,
             "CurrentSummationReceived": 0,
             "TotalActivePower": 0,
             "RMSCurrent": 0,
@@ -2012,7 +1974,7 @@
           "InstallationType": "Mono",
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "RawTotalActivePower": 18,
+          "RawTotalActivePower": 0,
           "RawDiag1": 0,
           "ACExtAlarmsMask": 0,
           "EquipmentData": {
@@ -2031,10 +1993,10 @@
             "IconId": 19,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 969,
+            "CurrentSummationDelivered": 3916,
             "CurrentSummationReceived": 0,
-            "TotalActivePower": 18,
-            "ActivePower": 18,
+            "TotalActivePower": 0,
+            "ActivePower": 0,
             "RMSCurrent": 0,
             "RMSVoltage": 236,
             "PcmMode": false
@@ -2067,12 +2029,12 @@
             "IconId": 5,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 9930,
+            "CurrentSummationDelivered": 25434,
             "CurrentSummationReceived": 0,
             "TotalActivePower": 9,
             "ActivePower": 9,
             "RMSCurrent": 0,
-            "RMSVoltage": 236,
+            "RMSVoltage": 235,
             "PcmMode": false
           }
         },
@@ -2103,7 +2065,7 @@
             "IconId": 8,
             "OperatingStatus": "NormalOperation",
             "FaultStatus": "NoFault",
-            "CurrentSummationDelivered": 210221,
+            "CurrentSummationDelivered": 298221,
             "CurrentSummationReceived": 0,
             "TotalActivePower": 0,
             "RMSCurrent": 0,
@@ -2132,7 +2094,7 @@
           "BatteryDefect": false,
           "RemoteAlarm": false,
           "HushMode": false,
-          "ReportCount": 53,
+          "ReportCount": 193,
           "EnableNotification": true,
           "SupervisionNotify": true,
           "RestoreNotify": true,
@@ -2185,8 +2147,8 @@
         "PairingStatus": "Paired",
         "OverrideType": "None",
         "provisionTokenSucceedCount": 1,
-        "provisionTokenFailCount": 578,
-        "provisionTokenRequestCount": 624,
+        "provisionTokenFailCount": 601,
+        "provisionTokenRequestCount": 647,
         "ClimateCapabilities": {
           "HeatingSupported": true,
           "CoolingSupported": false,
@@ -2219,49 +2181,48 @@
         "SummerComfortEnabled": false,
         "IndoorDiscomfortTemperature": 250,
         "OutdoorDiscomfortTemperature": 270,
-        "UnixTime": 1703683740,
+        "UnixTime": 1709975880,
         "ActiveSystemVersion": "4.22.4-e5fbcf1",
-        "ZigbeePermitJoinActive": false,
         "BrandName": "WiserHeat",
         "LocalDateAndTime": {
-          "Year": 2023,
-          "Month": "December",
-          "Date": 27,
-          "Day": "Wednesday",
-          "Time": 1429
+          "Year": 2024,
+          "Month": "March",
+          "Date": 9,
+          "Day": "Saturday",
+          "Time": 1018
         },
         "HeatingButtonOverrideState": "Off",
         "HotWaterButtonOverrideState": "Off",
         "OpenThermConnectionStatus": "Disconnected",
         "SunriseTimes": [
-          807,
-          808,
-          808,
-          809,
-          809,
-          809,
-          810,
-          810,
-          810,
-          810,
-          810,
-          810,
-          810
+          656,
+          654,
+          652,
+          650,
+          648,
+          646,
+          644,
+          642,
+          640,
+          638,
+          636,
+          634,
+          632
         ],
         "SunsetTimes": [
-          1628,
-          1629,
-          1629,
-          1630,
-          1631,
-          1631,
-          1632,
-          1633,
-          1633,
-          1634,
-          1635,
-          1636,
-          1637
+          1808,
+          1809,
+          1811,
+          1813,
+          1814,
+          1816,
+          1817,
+          1819,
+          1820,
+          1822,
+          1823,
+          1825,
+          1826
         ],
         "isTrialist": false,
         "isProvisioned": true,
@@ -2291,10 +2252,10 @@
           "IconId": 1,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 882170,
+          "CurrentSummationDelivered": 1260290,
           "CurrentSummationReceived": 0,
-          "TotalActivePower": 162,
-          "RMSCurrent": 0,
+          "TotalActivePower": 580,
+          "RMSCurrent": 2,
           "RMSCurrentPhB": 0,
           "RMSCurrentPhC": 0,
           "PcmMode": false
@@ -2315,7 +2276,7 @@
           "IconId": 10,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 41457,
+          "CurrentSummationDelivered": 47290,
           "CurrentSummationReceived": 0,
           "TotalActivePower": 0,
           "RMSCurrent": 0,
@@ -2339,10 +2300,10 @@
           "IconId": 19,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 969,
+          "CurrentSummationDelivered": 3916,
           "CurrentSummationReceived": 0,
-          "TotalActivePower": 18,
-          "ActivePower": 18,
+          "TotalActivePower": 0,
+          "ActivePower": 0,
           "RMSCurrent": 0,
           "RMSVoltage": 236,
           "PcmMode": false
@@ -2363,12 +2324,12 @@
           "IconId": 5,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 9930,
+          "CurrentSummationDelivered": 25434,
           "CurrentSummationReceived": 0,
           "TotalActivePower": 9,
           "ActivePower": 9,
           "RMSCurrent": 0,
-          "RMSVoltage": 236,
+          "RMSVoltage": 235,
           "PcmMode": false
         },
         {
@@ -2387,7 +2348,7 @@
           "IconId": 8,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 210221,
+          "CurrentSummationDelivered": 298221,
           "CurrentSummationReceived": 0,
           "TotalActivePower": 0,
           "RMSCurrent": 0,
@@ -2412,7 +2373,7 @@
           "IconId": 3,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 3047,
+          "CurrentSummationDelivered": 9039,
           "TotalActivePower": 0,
           "ActivePower": 0,
           "PcmMode": false
@@ -2456,7 +2417,7 @@
           "IconId": 40,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 244,
+          "CurrentSummationDelivered": 309,
           "TotalActivePower": 0,
           "ActivePower": 0,
           "PcmMode": false
@@ -2478,7 +2439,7 @@
           "IconId": 43,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 61,
+          "CurrentSummationDelivered": 244,
           "TotalActivePower": 0,
           "ActivePower": 0,
           "PcmMode": false
@@ -2500,7 +2461,7 @@
           "IconId": 42,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 0,
+          "CurrentSummationDelivered": 660,
           "TotalActivePower": 0,
           "ActivePower": 0,
           "PcmMode": false
@@ -2522,7 +2483,7 @@
           "IconId": 47,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 1038,
+          "CurrentSummationDelivered": 4340,
           "TotalActivePower": 0,
           "ActivePower": 0,
           "PcmMode": false
@@ -2544,9 +2505,9 @@
           "IconId": 45,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 58398,
-          "TotalActivePower": 50,
-          "ActivePower": 50,
+          "CurrentSummationDelivered": 201939,
+          "TotalActivePower": 52,
+          "ActivePower": 52,
           "PcmMode": false
         },
         {
@@ -2566,7 +2527,7 @@
           "IconId": 34,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 72,
+          "CurrentSummationDelivered": 936,
           "TotalActivePower": 0,
           "ActivePower": 0,
           "PcmMode": false
@@ -2588,7 +2549,7 @@
           "IconId": 41,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 226,
+          "CurrentSummationDelivered": 616,
           "TotalActivePower": 0,
           "ActivePower": 0,
           "PcmMode": false
@@ -2610,9 +2571,9 @@
           "IconId": 43,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 491,
-          "TotalActivePower": 0,
-          "ActivePower": 0,
+          "CurrentSummationDelivered": 1129,
+          "TotalActivePower": 22,
+          "ActivePower": 22,
           "PcmMode": false
         },
         {
@@ -2632,9 +2593,9 @@
           "IconId": 9,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 10780,
-          "TotalActivePower": 0,
-          "ActivePower": 0,
+          "CurrentSummationDelivered": 31521,
+          "TotalActivePower": 1605,
+          "ActivePower": 1605,
           "PcmMode": false
         },
         {
@@ -2654,9 +2615,9 @@
           "IconId": 11,
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 15062,
-          "TotalActivePower": 0,
-          "ActivePower": 0,
+          "CurrentSummationDelivered": 46101,
+          "TotalActivePower": 409,
+          "ActivePower": 409,
           "PcmMode": false
         },
         {
@@ -2681,7 +2642,7 @@
           },
           "OperatingStatus": "NormalOperation",
           "FaultStatus": "NoFault",
-          "CurrentSummationDelivered": 8418,
+          "CurrentSummationDelivered": 27481,
           "TotalActivePower": 0,
           "ActivePower": 0,
           "PcmMode": false
@@ -2726,22 +2687,543 @@
             "SSID": "ANON_SSID",
             "Channel": 255,
             "SecurityMode": "WPA_WPA2_PSK",
-            "RSSI": -46
+            "RSSI": -100
           }
         ],
         "ConnectionFailures": 0,
         "MacAddress": "ANON_MAC",
         "RSSI": {
-          "Current": -43,
-          "Min": -63,
-          "Max": -39
+          "Current": -41,
+          "Min": -50,
+          "Max": -37
         },
-        "Channel": 255,
-        "WfxRecoveries": 2
+        "Channel": 255
       }
     },
     "Schedule": {
-      "Heating": [],
+      "Heating": [
+        {
+          "id": 1,
+          "Name": "Schlafzimmer",
+          "Monday": {
+            "Time": [
+              630,
+              830,
+              1630,
+              2230
+            ],
+            "DegreesC": [
+              190,
+              150,
+              200,
+              150
+            ]
+          },
+          "Tuesday": {
+            "Time": [
+              630,
+              830,
+              1630,
+              2230
+            ],
+            "DegreesC": [
+              190,
+              150,
+              200,
+              150
+            ]
+          },
+          "Wednesday": {
+            "Time": [
+              630,
+              830,
+              1630,
+              2230
+            ],
+            "DegreesC": [
+              190,
+              150,
+              200,
+              150
+            ]
+          },
+          "Thursday": {
+            "Time": [],
+            "DegreesC": []
+          },
+          "Friday": {
+            "Time": [
+              630,
+              830,
+              1630,
+              2230
+            ],
+            "DegreesC": [
+              190,
+              150,
+              200,
+              150
+            ]
+          },
+          "Saturday": {
+            "Time": [
+              700,
+              1000,
+              1600,
+              2300
+            ],
+            "DegreesC": [
+              190,
+              170,
+              200,
+              150
+            ]
+          },
+          "Sunday": {
+            "Time": [
+              700,
+              1000,
+              1600,
+              2300
+            ],
+            "DegreesC": [
+              190,
+              170,
+              200,
+              150
+            ]
+          },
+          "ActiveSetpoints": "Heat",
+          "CurrentSetpoint": 170,
+          "Next": {
+            "Day": "Saturday",
+            "Time": 1600,
+            "DegreesC": 200
+          }
+        },
+        {
+          "id": 2,
+          "Name": "k\u00fcche",
+          "Monday": {
+            "Time": [
+              630,
+              830,
+              1630,
+              2230
+            ],
+            "DegreesC": [
+              190,
+              150,
+              200,
+              150
+            ]
+          },
+          "Tuesday": {
+            "Time": [
+              630,
+              830,
+              1630,
+              2230
+            ],
+            "DegreesC": [
+              190,
+              150,
+              200,
+              150
+            ]
+          },
+          "Wednesday": {
+            "Time": [
+              630,
+              830,
+              1630,
+              2230
+            ],
+            "DegreesC": [
+              190,
+              150,
+              200,
+              150
+            ]
+          },
+          "Thursday": {
+            "Time": [
+              630,
+              830,
+              1630,
+              2230
+            ],
+            "DegreesC": [
+              190,
+              150,
+              200,
+              150
+            ]
+          },
+          "Friday": {
+            "Time": [
+              630,
+              830,
+              1630,
+              2230
+            ],
+            "DegreesC": [
+              190,
+              150,
+              200,
+              150
+            ]
+          },
+          "Saturday": {
+            "Time": [
+              700,
+              1000,
+              1600,
+              2300
+            ],
+            "DegreesC": [
+              190,
+              170,
+              200,
+              150
+            ]
+          },
+          "Sunday": {
+            "Time": [
+              700,
+              1000,
+              1600,
+              2300
+            ],
+            "DegreesC": [
+              190,
+              170,
+              200,
+              150
+            ]
+          },
+          "CurrentSetpoint": 170,
+          "Next": {
+            "Day": "Saturday",
+            "Time": 1600,
+            "DegreesC": 200
+          }
+        },
+        {
+          "id": 3,
+          "Name": "Wohnzimmer",
+          "Monday": {
+            "Time": [
+              630,
+              830,
+              1630,
+              2230
+            ],
+            "DegreesC": [
+              190,
+              150,
+              200,
+              150
+            ]
+          },
+          "Tuesday": {
+            "Time": [
+              630,
+              830,
+              1630,
+              2230
+            ],
+            "DegreesC": [
+              190,
+              150,
+              200,
+              150
+            ]
+          },
+          "Wednesday": {
+            "Time": [
+              630,
+              830,
+              1630,
+              2230
+            ],
+            "DegreesC": [
+              190,
+              150,
+              200,
+              150
+            ]
+          },
+          "Thursday": {
+            "Time": [
+              830,
+              1630,
+              2230
+            ],
+            "DegreesC": [
+              150,
+              200,
+              150
+            ]
+          },
+          "Friday": {
+            "Time": [
+              630,
+              830,
+              1630,
+              2230
+            ],
+            "DegreesC": [
+              190,
+              150,
+              200,
+              150
+            ]
+          },
+          "Saturday": {
+            "Time": [
+              700,
+              1000,
+              1600,
+              2300
+            ],
+            "DegreesC": [
+              190,
+              170,
+              200,
+              150
+            ]
+          },
+          "Sunday": {
+            "Time": [
+              700,
+              1000,
+              1600,
+              2300
+            ],
+            "DegreesC": [
+              190,
+              170,
+              200,
+              150
+            ]
+          },
+          "ActiveSetpoints": "Heat",
+          "CurrentSetpoint": 170,
+          "Next": {
+            "Day": "Saturday",
+            "Time": 1600,
+            "DegreesC": 200
+          }
+        },
+        {
+          "id": 4,
+          "Name": "Esszimmer",
+          "Monday": {
+            "Time": [
+              630,
+              830,
+              1630,
+              2230
+            ],
+            "DegreesC": [
+              190,
+              150,
+              200,
+              150
+            ]
+          },
+          "Tuesday": {
+            "Time": [
+              630,
+              830,
+              1630,
+              2230
+            ],
+            "DegreesC": [
+              190,
+              150,
+              200,
+              150
+            ]
+          },
+          "Wednesday": {
+            "Time": [
+              630,
+              830,
+              1630,
+              2230
+            ],
+            "DegreesC": [
+              190,
+              150,
+              200,
+              150
+            ]
+          },
+          "Thursday": {
+            "Time": [
+              630,
+              830,
+              1630,
+              2230
+            ],
+            "DegreesC": [
+              190,
+              150,
+              200,
+              150
+            ]
+          },
+          "Friday": {
+            "Time": [
+              630,
+              830,
+              1630,
+              2230
+            ],
+            "DegreesC": [
+              190,
+              150,
+              200,
+              150
+            ]
+          },
+          "Saturday": {
+            "Time": [
+              700,
+              1000,
+              1600,
+              2300
+            ],
+            "DegreesC": [
+              190,
+              170,
+              200,
+              150
+            ]
+          },
+          "Sunday": {
+            "Time": [
+              700,
+              1000,
+              1600,
+              2300
+            ],
+            "DegreesC": [
+              190,
+              170,
+              200,
+              150
+            ]
+          },
+          "CurrentSetpoint": 170,
+          "Next": {
+            "Day": "Saturday",
+            "Time": 1600,
+            "DegreesC": 200
+          }
+        },
+        {
+          "id": 5,
+          "Name": "Bad",
+          "Monday": {
+            "Time": [
+              630,
+              830,
+              1630,
+              2230
+            ],
+            "DegreesC": [
+              190,
+              150,
+              200,
+              150
+            ]
+          },
+          "Tuesday": {
+            "Time": [
+              630,
+              830,
+              1630,
+              2230
+            ],
+            "DegreesC": [
+              190,
+              150,
+              200,
+              150
+            ]
+          },
+          "Wednesday": {
+            "Time": [
+              630,
+              830,
+              1630,
+              2230
+            ],
+            "DegreesC": [
+              190,
+              150,
+              200,
+              150
+            ]
+          },
+          "Thursday": {
+            "Time": [],
+            "DegreesC": []
+          },
+          "Friday": {
+            "Time": [
+              630,
+              830,
+              1630,
+              2230
+            ],
+            "DegreesC": [
+              190,
+              150,
+              200,
+              150
+            ]
+          },
+          "Saturday": {
+            "Time": [
+              700,
+              1000,
+              1600,
+              2300
+            ],
+            "DegreesC": [
+              190,
+              170,
+              200,
+              150
+            ]
+          },
+          "Sunday": {
+            "Time": [
+              700,
+              1000,
+              1600,
+              2300
+            ],
+            "DegreesC": [
+              190,
+              170,
+              200,
+              150
+            ]
+          },
+          "ActiveSetpoints": "Heat",
+          "CurrentSetpoint": 170,
+          "Next": {
+            "Day": "Saturday",
+            "Time": 1600,
+            "DegreesC": 200
+          }
+        }
+      ],
       "OnOff": [
         {
           "id": 1000,
@@ -2790,13 +3272,18 @@
           ],
           "CurrentState": "Off",
           "Next": {
-            "Day": "Wednesday",
+            "Day": "Saturday",
             "Time": 1630,
             "State": "On"
           }
         }
       ]
     },
-    "OpenTherm": {}
+    "OpenTherm": {},
+    "Status": {
+      "uptime": 7768836,
+      "lastResetReason": "UNKNOWN",
+      "taskUsageEnabled": false
+    }
   }
 }
